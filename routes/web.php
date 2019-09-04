@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::get('/penjual','PenjualController@index');
+Route::post('/penjual/add','PenjualController@add');
