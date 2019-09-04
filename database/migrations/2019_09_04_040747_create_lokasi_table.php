@@ -17,9 +17,9 @@ class CreateLokasiTable extends Migration
             $table->string('kode_lokasi', 5);
             $table->primary('kode_lokasi');
             $table->string('nama_lokasi', 20);
-            $table->integer('kode_pos_lokasi');
+            $table->integer('kode_pos_lokasi')->nullable(true);
             $table->integer('is_delete');
-            $table->dateTime('tanggal_hapus');
+            $table->dateTime('tanggal_hapus')->nullable(true);//tanggal hapus
             $table->timestamps();
         });
     }
