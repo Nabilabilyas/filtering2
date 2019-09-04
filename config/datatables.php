@@ -27,12 +27,15 @@ return [
          * SQL: column LIKE "%k%e%y%w%o%r%d%"
          */
         'use_wildcards' => false,
+<<<<<<< HEAD
 
         /*
          * Perform a search which starts with the given keyword.
          * SQL: column LIKE "keyword%"
          */
         'starts_with'    => false,
+=======
+>>>>>>> 41c1083382d7aa20450eea6ff43ca42b87b2acdb
     ],
 
     /*

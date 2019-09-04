@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<<<<<<< HEAD
   <title>Laravel Vicky</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -20,6 +21,24 @@
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="/adminlte/css/skins/_all-skins.min.css">
 <!--   <link rel="stylesheet" type="text/css" href="assets/css/datatables.min.css"> -->
+=======
+  <title>OLES</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="adminlte/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="adminlte/bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="adminlte/bower_components/Ionicons/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="adminlte/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="adminlte/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="adminlte/css/skins/_all-skins.min.css">
+>>>>>>> 41c1083382d7aa20450eea6ff43ca42b87b2acdb
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -37,11 +56,19 @@
 
   <header class="main-header">
     <!-- Logo -->
+<<<<<<< HEAD
     <a href="/home" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>TS</span>
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>ATS</b> Academy</span>
+=======
+    <a href="../../index2.html" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>A</b>LT</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>Admin</b>LTE</span>
+>>>>>>> 41c1083382d7aa20450eea6ff43ca42b87b2acdb
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -55,6 +82,7 @@
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
+<<<<<<< HEAD
           
                   
           <!-- User Account: style can be found in dropdown.less -->
@@ -62,10 +90,18 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="./adminlte/img/user2-160x160.jpg" class="user-image" alt="User Image">
               <span class="hidden-xs">{{ Auth::user()->name }}</span>
+=======
+          <!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="adminlte/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">Fitri Nabila Yasmine</span>
+>>>>>>> 41c1083382d7aa20450eea6ff43ca42b87b2acdb
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
+<<<<<<< HEAD
                 <img src="./adminlte/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
@@ -84,6 +120,20 @@
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                       @csrf
                   </form>
+=======
+                <img src="adminlte/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                <p>
+                  Fitri Nabila Yasmine
+                </p>
+              </li>
+
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                
+                <div class="pull-right">
+                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+>>>>>>> 41c1083382d7aa20450eea6ff43ca42b87b2acdb
                 </div>
               </li>
             </ul>
@@ -100,6 +150,7 @@
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
+<<<<<<< HEAD
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
@@ -109,21 +160,46 @@
           </a>
         </li>
       </ul>   
+=======
+
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header">MAIN NAVIGATION</li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+            <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+          </ul>
+>>>>>>> 41c1083382d7aa20450eea6ff43ca42b87b2acdb
     </section>
     <!-- /.sidebar -->
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
+<<<<<<< HEAD
     <!-- Content Header (Page header) -->
   @yield('content')  
+=======
+    @yield('content')
+>>>>>>> 41c1083382d7aa20450eea6ff43ca42b87b2acdb
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.13
     </div>
+<<<<<<< HEAD
     <strong>Copyright &copy; 2019-2024 <a href="https://adminlte.io">ATS Academy</a>.</strong> All rights
+=======
+    <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE</a>.</strong> All rights
+>>>>>>> 41c1083382d7aa20450eea6ff43ca42b87b2acdb
     reserved.
   </footer>
 
@@ -324,6 +400,7 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 3 -->
+<<<<<<< HEAD
 <script src="/adminlte/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="/adminlte/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -340,6 +417,22 @@
 <script src="/adminlte/js/demo.js"></script>
 <!-- <script type="text/javascript" src="assets/js/datatables.min.js"></script> -->
 <!-- page script -->
+=======
+<script src="adminlte/bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="adminlte/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="adminlte/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="adminlte/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<!-- SlimScroll -->
+<script src="adminlte/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="adminlte/bower_components/fastclick/lib/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="adminlte/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="adminlte/js/demo.js"></script>
+>>>>>>> 41c1083382d7aa20450eea6ff43ca42b87b2acdb
 @yield('js')
 </body>
 </html>
