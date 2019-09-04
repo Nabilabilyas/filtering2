@@ -20,6 +20,24 @@
 				
 			</span>
 			<!-- <button type="button" class="btn btn-secondary" id="buttonEdit">Edit</button> -->
+			<span id="1" style="margin: 2px;"></span>
+			<div style="text-align: center;">
+				<table class="table table-bordered" id="myTable">
+					<thead>
+						<tr>
+							<th rowspan="2" class="align-middle">Kode Penjual</th>
+							<th rowspan="2" class="align-middle">Nama Penjual</th>
+							<th rowspan="2" class="align-middle">Status</th>
+							<th colspan="5" style="text-align: center;">Action</th>
+						</tr>
+						<tr>
+							<th>Edit</th>
+							<th>Delete</th>
+							<th>Detail</th>
+						</tr>					
+					</thead>
+				</table>
+			</div>
 		</div>
 	</div>
 </body>
