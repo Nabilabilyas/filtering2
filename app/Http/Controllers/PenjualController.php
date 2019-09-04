@@ -48,6 +48,7 @@ class PenjualController extends Controller
     	$form_data = array(
     		'kode_penjual' => $request->kode_penjual,
     		'nama_penjual' => $request->nama_penjual,
+    		'usia_penjual' => $request->usia_penjual,
     		'status' => $request->is_delete,
     		'is_delete' => $is_delete
     	);
@@ -59,5 +60,49 @@ class PenjualController extends Controller
     		Penjual::create($form_data);
     		return response()->json(['success'=>'Data added successfully']);
     	}
+    }
+
+    // detail
+    public function detail(request $request, $kode_penjual){
+    	if ($request->ajax()) {
+            $data  = Penjual::where('kode_penjual', '=', $kode_penjual)->get();
+            return response()->json(['data'=>$data]);
+        }
+    }
+
+    //edit
+    public function edit(request $request, $kode_penjual){
+    	if ($request->ajax()) {
+            $data  = Penjual::where('kode_penjual', '=', $kode_penjual)->get();
+            return response()->json(['data'=>$data]);
+        }
+    }
+
+    //update
+    public function update(request $request){
+    	$form_data = array(
+    		'nama_penjual' => $request->nama_penjual,
+    		'usia_penjual' => $request->usia_penjual,
+    	);
+    	$kodePel= Penjual::where('kode_penjual', '=', $request->kode_penjual)->update($form_data);
+    	return response()->json(['success'=>'Data successfully updated']);
+    }
+
+    public function delete($kode){
+    	$is_delete=0;
+    	$form_data = array(
+    		'is_delete' => $is_delete
+    	);
+    	$kodePel= Penjual::where('kode_penjual', '=', $kode)->update($form_data);
+    	return response()->json(['success'=>'Data berhasil Dihapus']);
+    }
+
+    public function aktif($kode){
+    	$is_delete=1;
+    	$form_data = array(
+    		'is_delete' => $is_delete
+    	);
+    	$kodePel= Penjual::where('kode_penjual', '=', $kode)->update($form_data);
+    	return response()->json(['success'=>'Data berhasil Dihapus']);
     }
 }
