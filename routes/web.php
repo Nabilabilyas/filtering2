@@ -12,7 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('kategori.index_kategori');
 });
 
-Route::get('/penjual','PenjualController@index');
+Route::get('/kategori','KategoriController@index');
+Route::post('/kategori/add','KategoriController@add');
+Route::get('/kategori/detail/{id}','KategoriController@detail');
+Route::get('/kategori/edit/{id}','KategoriController@edit');
+route::post('/kategori/update','KategoriController@update');
+route::get('/kategori/delete/{id}','KategoriController@delete');
+route::get('/kategori/aktif/{id}','KategoriController@aktif');
+
+
+
