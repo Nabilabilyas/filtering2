@@ -10,10 +10,10 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Data Penjual</h1>
+		<h1 style="text-align: center;">Data Penjual</h1>
 		<hr>
 		<!-- Button trigger modal -->
-		<div>
+		<div class="container">
 			<button type="button" class="btn btn-primary" id="buttonAdd">Tambah</button>
 			<br><br>
 			<span id="notif">
@@ -22,7 +22,7 @@
 			<!-- <button type="button" class="btn btn-secondary" id="buttonEdit">Edit</button> -->			
 		</div>
 		<span id="1" style="margin: 2px;"></span>
-		<div style="text-align: center;">
+		<div class="container" style="text-align: center;">
 			<table class="table table-bordered" id="myTable">
 				<thead>
 					<tr>

@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/coba', function () {
+    return view('test_templating.dua');
+});
+
 Route::get('/penjual','PenjualController@index');
 Route::post('/penjual/add','PenjualController@add');
 Route::post('/penjual/update','PenjualController@update');
