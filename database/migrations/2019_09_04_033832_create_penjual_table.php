@@ -14,12 +14,12 @@ class CreatePenjualTable extends Migration
     public function up()
     {
         Schema::create('penjual', function (Blueprint $table) {
-            $table->string('kode_penjual', 6);
+            $table->string('kode_penjual', 5);
             $table->primary('kode_penjual');
             $table->string('nama_penjual', 20);
-            $table->integer('usia_penjual');
+            $table->integer('usia_penjual')->nullable(true);
             $table->integer('is_delete');
-            $table->dateTime('tanggal_hapus');
+            $table->dateTime('tanggal_hapus')->nullable(true);
             $table->timestamps();
         });
     }
