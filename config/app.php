@@ -1,5 +1,11 @@
 <?php
+<<<<<<< HEAD
 return [
+=======
+
+return [
+
+>>>>>>> b788dc11c30eb5777789699340f9b41ca795db67
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -10,7 +16,13 @@ return [
     | any other location as required by the application or its packages.
     |
     */
+<<<<<<< HEAD
     'name' => env('APP_NAME', 'Laravel'),
+=======
+
+    'name' => env('APP_NAME', 'Laravel'),
+
+>>>>>>> b788dc11c30eb5777789699340f9b41ca795db67
     /*
     |--------------------------------------------------------------------------
     | Application Environment
@@ -21,7 +33,13 @@ return [
     | services the application utilizes. Set this in your ".env" file.
     |
     */
+<<<<<<< HEAD
     'env' => env('APP_ENV', 'production'),
+=======
+
+    'env' => env('APP_ENV', 'production'),
+
+>>>>>>> b788dc11c30eb5777789699340f9b41ca795db67
     /*
     |--------------------------------------------------------------------------
     | Application Debug Mode
@@ -32,7 +50,13 @@ return [
     | application. If disabled, a simple generic error page is shown.
     |
     */
+<<<<<<< HEAD
     'debug' => env('APP_DEBUG', false),
+=======
+
+    'debug' => env('APP_DEBUG', false),
+
+>>>>>>> b788dc11c30eb5777789699340f9b41ca795db67
     /*
     |--------------------------------------------------------------------------
     | Application URL
@@ -43,8 +67,16 @@ return [
     | your application so that it is used when running Artisan tasks.
     |
     */
+<<<<<<< HEAD
     'url' => env('APP_URL', 'http://localhost'),
     'asset_url' => env('ASSET_URL', null),
+=======
+
+    'url' => env('APP_URL', 'http://localhost'),
+
+    'asset_url' => env('ASSET_URL', null),
+
+>>>>>>> b788dc11c30eb5777789699340f9b41ca795db67
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
@@ -55,7 +87,13 @@ return [
     | ahead and set this to a sensible default for you out of the box.
     |
     */
+<<<<<<< HEAD
     'timezone' => 'UTC',
+=======
+
+    'timezone' => 'UTC',
+
+>>>>>>> b788dc11c30eb5777789699340f9b41ca795db67
     /*
     |--------------------------------------------------------------------------
     | Application Locale Configuration
@@ -66,7 +104,13 @@ return [
     | to any of the locales which will be supported by the application.
     |
     */
+<<<<<<< HEAD
     'locale' => 'en',
+=======
+
+    'locale' => 'en',
+
+>>>>>>> b788dc11c30eb5777789699340f9b41ca795db67
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
@@ -77,7 +121,13 @@ return [
     | the language folders that are provided through your application.
     |
     */
+<<<<<<< HEAD
     'fallback_locale' => 'en',
+=======
+
+    'fallback_locale' => 'en',
+
+>>>>>>> b788dc11c30eb5777789699340f9b41ca795db67
     /*
     |--------------------------------------------------------------------------
     | Faker Locale
@@ -88,7 +138,13 @@ return [
     | localized telephone numbers, street address information and more.
     |
     */
+<<<<<<< HEAD
     'faker_locale' => 'en_US',
+=======
+
+    'faker_locale' => 'en_US',
+
+>>>>>>> b788dc11c30eb5777789699340f9b41ca795db67
     /*
     |--------------------------------------------------------------------------
     | Encryption Key
@@ -99,8 +155,16 @@ return [
     | will not be safe. Please do this before deploying an application!
     |
     */
+<<<<<<< HEAD
     'key' => env('APP_KEY'),
     'cipher' => 'AES-256-CBC',
+=======
+
+    'key' => env('APP_KEY'),
+
+    'cipher' => 'AES-256-CBC',
+
+>>>>>>> b788dc11c30eb5777789699340f9b41ca795db67
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
@@ -111,7 +175,13 @@ return [
     | this array to grant expanded functionality to your applications.
     |
     */
+<<<<<<< HEAD
     'providers' => [
+=======
+
+    'providers' => [
+
+>>>>>>> b788dc11c30eb5777789699340f9b41ca795db67
         /*
          * Laravel Framework Service Providers...
          */
@@ -137,9 +207,17 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+<<<<<<< HEAD
         /*
          * Package Service Providers...
          */
+=======
+
+        /*
+         * Package Service Providers...
+         */
+
+>>>>>>> b788dc11c30eb5777789699340f9b41ca795db67
         /*
          * Application Service Providers...
          */
@@ -149,7 +227,13 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Yajra\Datatables\DatatablesServiceProvider::class,
+<<<<<<< HEAD
     ],
+=======
+
+    ],
+
+>>>>>>> b788dc11c30eb5777789699340f9b41ca795db67
     /*
     |--------------------------------------------------------------------------
     | Class Aliases
@@ -160,7 +244,13 @@ return [
     | the aliases are "lazy" loaded so they don't hinder performance.
     |
     */
+<<<<<<< HEAD
     'aliases' => [
+=======
+
+    'aliases' => [
+
+>>>>>>> b788dc11c30eb5777789699340f9b41ca795db67
         'App' => Illuminate\Support\Facades\App::class,
         'Arr' => Illuminate\Support\Arr::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
@@ -198,4 +288,9 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Datatables'=>Yajra\Datatables\Facades\Datatables::class,
     ],
+<<<<<<< HEAD
 ];
+=======
+
+];
+>>>>>>> b788dc11c30eb5777789699340f9b41ca795db67
