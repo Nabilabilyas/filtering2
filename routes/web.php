@@ -63,3 +63,10 @@ Route::get('/setting', function () {
 
 Route::get('/barang','BarangController@index');
 Route::post('/barang/add','BarangController@add');
+
+
+
+
+Route::get('/', function () {
+    return view('home1.index_home');
+});

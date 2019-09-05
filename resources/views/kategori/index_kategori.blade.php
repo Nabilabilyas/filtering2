@@ -22,7 +22,7 @@
 			<p><img style="float: left; margin: 0px 15px 15px 0px;" height="15%" width="15%" src="/images/oles.png">
 			<h1 style="text-align: center;">OLES</h1><hr>
 			<h1 style="text-align: center;">Cara Tepat Jual Lambat</h1>
-			<button class="btn btn-primary light btn-lg" onclick="window.location.href='/home'">Halaman Utama</button>
+			<button class="btn btn-primary light btn-lg" onclick="window.location.href='/'">Halaman Utama</button>
 			<button class="btn btn-warning btn-lg active" onclick="window.location.href='/setting'">Pengaturan</button>
 			<hr>
 			<br>
