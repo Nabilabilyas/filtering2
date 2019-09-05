@@ -13,11 +13,11 @@ class KategoriController extends Controller
                return datatables()->of(Kategori::all())
                         ->addColumn('aktif',function($data){
                             if ($data->isdelete==1) {
-                                $button = '<button type="button"id="'.$data->kode_kategori.'"class=" btn btn-outline-success btn-sm form-control input-lg">Aktif</button>';   
+                                $button = '<button type="button"id="'.$data->kode_kategori.'"class=" form-control input-lg btn btn-alert alert-success btn-sm" role="alert">Aktif</button>';   
                                  return $button;
 
                             }else{
-                                $button = '<button type="button"id="'.$data->kode_kategori.'"class="aktif btn btn-outline-success btn-sm">Aktif</button>'.'<button type="button"id="'.$data->kode_kategori.'"class=" btn btn-outline-danger btn-sm">Non Aktif</button>';
+                                $button = '<button type="button"id="'.$data->kode_kategori.'"class="aktif  btn btn-success btn-sm">Aktifkan</button>'.'<button type="button"id="'.$data->kode_kategori.'"class="btn btn-alert alert-danger btn-sm" role="alert">Non Aktif</button>';
                                 return $button;
                                 }
                         	})
@@ -29,12 +29,12 @@ class KategoriController extends Controller
                             if ($data->isdelete==0) {
                                 
                             }else{
-                                $button = '<button type="button"id="'.$data->kode_kategori.'"class="delete btn btn-danger btn-sm">Delete</button>';
+                                $button = '<button type="button"id="'.$data->kode_kategori.'"class="delete btn btn-danger btn-sm">Hapus</button>';
                                 return $button;
                                 }
                             })
                         ->addColumn('detail',function($data){
-                            $button = '<button type="button"id="'.$data->kode_kategori.'"class="detail btn btn-warning btn-sm">Detail</button>';
+                            $button = '<button type="button"id="'.$data->kode_kategori.'"class="detail btn btn-warning btn-sm">Liat</button>';
                             return $button;
                         })
                         

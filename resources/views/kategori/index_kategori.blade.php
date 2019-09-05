@@ -61,7 +61,7 @@
 					<th rowspan="2" class="align-middle">Kode Kategori</th>
 					<th rowspan="2" class="align-middle">Nama Kategori</th>
 					<th rowspan="2" class="align-middle">Status</th>
-					<th style="text-align: center;"colspan="3">Action</th>				
+					<th style="text-align: center;"colspan="3">Aksi</th>				
 				</tr>
 				<tr>
 					<th>Edit</th>
@@ -112,7 +112,7 @@
 		      	</table>
 		      </div>
 		        <div class="modal-footer" style="background-color: turquoise">
-		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
 		        <button type="submit" class="btn btn-primary" id="action_button"></button>
 		      </div>
      		</form>
@@ -166,8 +166,8 @@
 					<h4 class="modal-title" style="text-align: center;">Hapus Jangan Ragu</h4>
 					</div>
 				<div class="modal-footer" style="margin: 0px; border-top: 0px; text-align: center;">
-					<button class="btn btn-danger" id="delete_button">Delete</button>
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+					<button class="btn btn-danger" id="delete_button">Hapus</button>
 				</div>
 			</div>
 		</div>		
@@ -201,7 +201,7 @@
 			$(".modal-title").text('Tambah Kategori');
 			$("#action").val("Tambah");
 			$("#kode_kategori").attr('readonly',false);
-			$("#action_button").text("Add");
+			$("#action_button").text("Tambah");
 			$("#myModal").modal('show');
 		});
 
@@ -377,7 +377,7 @@ $(document).on('click','.edit',function(){
 						$("#kode_kategori").attr('readonly',true);
 						$("#action").val("Edit");
 						$(".modal-title").text('Edit Data');
-						$("#action_button").text("Update");
+						$("#action_button").text("Perbarui");
 						$("#myModal").modal("show");
 					}
 				});		
