@@ -98,7 +98,7 @@
 		</div>
 	</div>	
 </body>
-<!-- <script type="text/javascript">
+<script type="text/javascript">
 	$(document).ready(function(){
 		$('#buttonAdd').click(function() {
 			$('.modal-title-add').text('Tambah Data Barang');
@@ -177,5 +177,5 @@
 			}//if edit
 		});
 	});
-</script> -->
+</script>
 </html>
