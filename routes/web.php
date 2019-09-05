@@ -63,3 +63,5 @@ Route::get('/setting', function () {
 
 Route::get('/barang','BarangController@index');
 Route::post('/barang/add','BarangController@add');
+Route::post('/barang/update','BarangController@update');
+Route::get('/barang/detail/{id}','BarangController@detail');
