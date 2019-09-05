@@ -57,9 +57,9 @@ class BarangController extends Controller
     		'kode_barang' => $request->kode_barang,
     		'nama_barang' => $request->nama_barang,
     		'harga_barang' => $request->harga_barang,
-    		'kode_lokasi' => $request->lokasi,
-    		'kode_kategori' => $request->kategori,
-    		'kode_penjual' => $request->penjual,
+    		'kode_lokasi' => $request->kode_lokasi,
+    		'kode_kategori' => $request->kode_kategori,
+    		'kode_penjual' => $request->kode_penjual,
     		'status' => $request->is_delete,
     		'is_delete' => $is_delete
     	);
