@@ -74,7 +74,7 @@ Route::get('/setting', function () {
 
 Route::get('/barang','BarangController@index');
 Route::post('/barang/add','BarangController@add');
-<<<<<<< HEAD
+
 
 
 
@@ -82,7 +82,6 @@ Route::post('/barang/add','BarangController@add');
 Route::get('/', function () {
     return view('home1.index_home');
 });
-=======
+
 Route::post('/barang/update','BarangController@update');
 Route::get('/barang/detail/{id}','BarangController@detail');
->>>>>>> 631c7883bbd3ac45751352791c6083da650243e6
