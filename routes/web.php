@@ -15,7 +15,7 @@
 // Route::get('/', function () {
 //     return view('kategori.index_kategori');
 // });
-
+//============================== Kategori
 Route::get('/kategori','KategoriController@index');
 Route::post('/kategori/add','KategoriController@add');
 Route::get('/kategori/detail/{id}','KategoriController@detail');
@@ -32,19 +32,21 @@ Route::get('/', function () {
 });
 
 
-Route::get('/halamanutama', function () {
-    return view('HalamanUtama.index_halaman_utama');
-});
+// Route::get('/halamanutama', function () {
+//     return view('HalamanUtama.index_halaman_utama');
+// });
 
 
-Route::get('/barang', function () {
-    return view('barang.index_barang');
-});
+// Route::get('/barang', function () {
+//     return view('barang.index_barang');
+// });
 
 // Route::get('/barang', function () {
 //     return view('Barang.index_barang');
 // });
 
+
+// ================================ Lokasi
 Route::get('/Lokasi','LokasiController@index');
 Route::post('/Lokasi/add','LokasiController@add');
 Route::get('/Lokasi/detail/{id}','LokasiController@detail');
@@ -59,6 +61,8 @@ Route::post('/Lokasi/update','LokasiController@update');
 //     return view('test_templating.dua');
 // });
 
+
+//================================== Penjual
 Route::get('/penjual','PenjualController@index');
 Route::post('/penjual/add','PenjualController@add');
 Route::post('/penjual/update','PenjualController@update');
@@ -72,16 +76,35 @@ Route::get('/setting', function () {
     return view('setting.index_setting');
 });
 
+//================= Barang
 Route::get('/barang','BarangController@index');
 Route::post('/barang/add','BarangController@add');
+<<<<<<< HEAD
+
+=======
+Route::post('/barang/update','BarangController@update');
+Route::get('/barang/detail/{id}','BarangController@detail');
+>>>>>>> 09b89e8df73e2147cf81d9a8470162a57331a2f6
 
 
+//Halaman Utama
+Route::get('/home','HalamanUtamaController@index');
 
 
+// Route::get('/', function () {
+//     return view('home1.index_home');
+// });
 
 Route::get('/', function () {
     return view('home1.index_home');
 });
 
 Route::post('/barang/update','BarangController@update');
+<<<<<<< HEAD
 Route::get('/barang/detail/{id}','BarangController@detail');
+=======
+Route::get('/barang/detail/{id}','BarangController@detail');
+
+Route::get('/barang/delete/{id}','BarangController@delete');
+Route::get('/barang/aktif/{id}','BarangController@aktif');
+>>>>>>> 09b89e8df73e2147cf81d9a8470162a57331a2f6

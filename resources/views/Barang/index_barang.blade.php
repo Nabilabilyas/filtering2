@@ -149,7 +149,24 @@
 			</div>
 		</div>
 	</div>
-	<!-- Modal Detail -->
+	<!-- --------------------------------------------------------------------------------------- -->
+<!-- modal delete -->
+	<div class="modal fade" id="modal_delete" >
+		<div class="modal-dialog" >
+			<div class="modal-content" style="margin-top: 100px" >
+				<div class="modal-header" style="background-color:turquoise">
+				</div>
+					<div class="modal-body">
+					<h4 class="modal-title" style="text-align: center;">Hapus Jangan Ragu</h4>
+					</div>
+				<div class="modal-footer" style="margin: 0px; border-top: 0px; text-align: center;">
+					<button class="btn btn-danger" id="delete_button">Delete</button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+				</div>
+			</div>
+		</div>		
+	</div>
+	<!-- modal detail -->
 	<div id="myModalDetail" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 	    <div class="modal-content">
@@ -200,6 +217,24 @@
 	    </div>
 	  </div>	
 	</div>	
+	<!-- Modal Aktif -->
+	<div class="modal fade" id="modal_aktif">
+		<div class="modal-dialog">
+		<div class="modal-content" style="margin-top: 100px;">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			</div>
+			<div class="modal-body">
+				<h4 class="modal-title" style="text-align: center;"> Activate this Data? </h4>
+			</div>
+			<div class="modal-footer" style="margin: 0px; border-top: 0px; text-align: center;">
+				<button type="button" class="btn btn-danger" id="activate">Okay</button>
+				<button type="button" class="btn btn-success" data-dismiss="modal">Cancel</button>
+				
+			</div>
+		</div>
+		</div>
+	</div>
 </body>
 <script type="text/javascript">
 	$(document).ready(function(){
@@ -253,7 +288,7 @@
 			$("#harga_barang").val('');
 		});
 
-		$('#formPenjual').on('submit',function(e) {
+		$('#formBarang').on('submit',function(e) {
 			e.preventDefault();
 			var action=$("#action").val();
 			var kode_barang=$('#kode_barang').val();
@@ -316,22 +351,63 @@
 				}
 			}//if edit
 		});
+		/*Delete*/
+		var id_delete;
+			$(document).on('click','.delete',function(){
+				id_delete=$(this).attr('id');
+				//alert(id);
+				$(".modal-title").text('Hapus Data');
+				$("#modal_delete").modal('show');
+				
+			});	//penutup delete(show modal)
 
-		$(document).on('click','.detail', function(){
-			var id= $(this).attr('id');			
-			// alert (id);
+			//action delete
+			$("#delete_button").click(function(){
+				$.ajax({
+					url:"/barang/delete/"+id_delete,
+					beforeSend:function(){
+						$("#delete_button").text('hapussss...');
+					},
+					success:function(){
+						setTimeout(function(){
+						$("#modal_delete").modal('hide');
+						$("#delete_button").text('Delete');
+						$("#myTable").DataTable().ajax.reload();
+					},500);
+				}
+			});	
+		});
+
+			//--------------------------------------------------------------------------------------
+//aktif
+
+
+
+//-----------------------------------------------------------------------
+
+//--------------------------------------------------------------------------------------
+
+		//modal Aktif
+		var kode;	
+		$(document).on('click','.aktif', function(){
+			kode=$(this).attr("id");
+			//alert (id);
+			$("#modal_aktif").modal('show');
+		});//penutup delete
+
+		//action activate
+		$("#activate").click(function(){
 			$.ajax({
-				url:"/barang/detail/"+id,
-				dataType:"json",
-				success:function(html){
-					$("#kode_barang_detail").text(html.data[0].kode_penjual);
-					$("#nama_barang_detail").text(html.data[0].nama_barang);
-					$("#harga_barang_detail").text(html.data[0].harga_barang);
-					$("#kode_lokasi_detail").text(html.data[0].kode_lokasi);
-					$("#kode_kategori_detail").text(html.data[0].kode_barang);
-					$("#kode_penjual_detail").text(html.data[0].kode_penjual);
-					$("#tombol_action").text("Update Data");
-					$("#myModalDetail").modal("show");
+				url:"/barang/aktif/"+kode,
+				beforeSend:function(){
+					$("#delete_button").text('Activating...');
+				},
+				success:function(){
+					setTimeout(function(){
+						$("#modal_aktif").modal('hide');
+						$("#activate").text('OK');
+						$("#myTable").DataTable().ajax.reload();
+					},500);
 				}
 			});
 		});

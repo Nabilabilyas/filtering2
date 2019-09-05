@@ -81,16 +81,50 @@ class BarangController extends Controller
         }
     }
 
+<<<<<<< HEAD
     //edit
 
     public function edit(request $request, $kode_penjual){
       if ($request->ajax()) {
             $data  = Penjual::where('kode_penjual', '=', $kode_penjual)->get();
 
+=======
+    
+>>>>>>> 09b89e8df73e2147cf81d9a8470162a57331a2f6
     public function edit(request $request, $kode_barang){
-    	if ($request->ajax()) {
+      if ($request->ajax()) {
             $data  = Barang::where('kode_barang', '=', $kode_barang)->get();
             return response()->json(['data'=>$data]);
         }
+    }
+
+    //update
+    public function update(request $request){
+      $form_data = array(
+        'nama_barang' => $request->nama_barang,
+        'harga_barang' => $request->harga_barang,
+      );
+      $kodeBar= Barang::where('kode_barang', '=', $request->kode_penjual)->update($form_data);
+      return response()->json(['success'=>'Data successfully updated']);
+    }
+
+    public function delete($id){
+        $is_delete = 0;
+        $form_data = array(
+            'is_delete'      => $is_delete
+        );
+
+        Barang::where('kode_barang','=', $id)->update($form_data);
+
+        return response()->json(['success'=>'Data berhasil dihapus.']);
+    }
+
+   public function aktif($kode){
+      $is_delete=1;
+      $form_data = array(
+        'is_delete' => $is_delete
+      );
+      $kodePel= Penjual::where('kode_penjual', '=', $kode)->update($form_data);
+      return response()->json(['success'=>'Data berhasil Dihapus']);
     }
 }
