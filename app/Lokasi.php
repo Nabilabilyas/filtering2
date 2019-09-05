@@ -8,6 +8,6 @@ class Lokasi extends Model
 {
     protected $table = 'lokasi';
 	
-   	protected $fillable =['kode_lokasi','nama_lokasi','kode_alamat_lokasi','is_delete'];
+   	protected $fillable =['kode_lokasi','nama_lokasi','kode_pos_lokasi','is_delete'];
 }
 

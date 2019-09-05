@@ -13,8 +13,6 @@
 
 </head>
 <body>
-<!-- --------------------------------------------------------------------------------------------- -->
-<!--Tampilan Awal -->
 	<div class="container">
 		<h2 style="text-align: center;">OLES</h2><hr>
 		<div style="text-align: right;">
@@ -23,10 +21,33 @@
 		</div>
 
 		<div class="btn-group btn-group-toggle" data-toggle="buttons">
-		    <button class="btn btn-success btn-sm" onclick="window.location.href='/kategori'">Kategori</button>
+		    <button class="btn btn-success btn-sm active" onclick="window.location.href='/kategori'">Kategori</button>
+		    <button class="btn btn-light btn-sm"  onclick="window.location.href='/Lokasi'">Lokasi</button>
+		    <button class="btn btn-light btn-sm" onclick="window.location.href='/penjual'">Penjual</button>
+		    <button class="btn btn-light btn-sm" onclick="window.location.href='/'">Item</button>
+		</div>
+		<hr><br>
+
+		<h3>Data Penjual</h3>
+		<hr>		
+<!-- --------------------------------------------------------------------------------------------- -->
+<!--Tampilan Awal -->
+	<div class="container">
+		<h2 style="text-align: center;">OLES</h2><hr>
+		<div style="text-align: right;">
+			<button class="btn btn-primary active" onclick="window.location.href='/home'">Home</button>
+			<button class="btn btn-primary">Setting</button>
+		</div>
+
+		<div class="btn-group btn-group-toggle" data-toggle="buttons">
+		    <button class="btn btn-success btn-sm active" onclick="window.location.href='/kategori'">Kategori</button>
 		    <button class="btn btn-light btn-sm" onclick="window.location.href='/Lokasi'">Lokasi</button>
 		    <button class="btn btn-light btn-sm" onclick="window.location.href='/penjual'">Penjual</button>
+<<<<<<< HEAD
 		    <button class="btn btn-light btn-sm active" onclick="window.location.href='/'">Barang</button>
+=======
+		    <button class="btn btn-light btn-sm" onclick="window.location.href='/'">Item</button>
+>>>>>>> e2192ad6009f6bb4cdf590c109d68cfdfdc112c4
 		</div>
 		<hr><br>
 <!-- ----------------------------------------------------------------------------------------------------------- -->
