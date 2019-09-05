@@ -16,6 +16,20 @@
 <!-- --------------------------------------------------------------------------------------------- -->
 <!--Tampilan Awal -->
 	<div class="container">
+		<h2 style="text-align: center;">OLES</h2><hr>
+		<div style="text-align: right;">
+			<button class="btn btn-primary active">Home</button>
+			<button class="btn btn-primary">Setting</button>
+		</div>
+
+		<div class="btn-group btn-group-toggle" data-toggle="buttons">
+		    <button class="btn btn-light btn-sm" onclick="window.location.href='/kategori'">Kategori</button>
+		    <button class="btn btn-light btn-sm" onclick="window.location.href='/Lokasi'">Lokasi</button>
+		    <button class="btn btn-light btn-sm" onclick="window.location.href='/penjual'">Penjual</button>
+		    <button class="btn btn-success btn-sm active" onclick="window.location.href='/'">Item</button>
+		</div>
+		<hr><br>
+<!-- ----------------------------------------------------------------------------------------------------------- -->
 		<h4 style="text-align: center; color:red ">DATA KATEGORI</h4>
 		<hr>
 		<button type="button" class="btn btn-primary" id="buttonTambah">Tambah</button>
@@ -77,7 +91,7 @@
 		      			<td class="align-middle">Biaya Kategori</td>
 		      			<td>:</td>
 		      			<td>
-		      				<input class=" form-control input-lg " type="text" id="" name="biaya_kategori" placeholder="Biaya Kategori" required="" >
+		      				<input class=" form-control input-lg " type="text" id="biaya_kategori" name="biaya_kategori" placeholder="Biaya Kategori" required="" >
 		      			</td>
 		      		</tr>
 		      	</table>
@@ -307,8 +321,8 @@ $(document).on('click','.detail',function(){
 					url:"/kategori/detail/"+id,
 					dataType:"json",
 					success:function(html){
-						console.log(html);
-						$("#kode_kategori_detail").text(html.data[0].kode_kategori);
+/*						console.log(html);
+*/						$("#kode_kategori_detail").text(html.data[0].kode_kategori);
 						$("#nama_kategori_detail").text(html.data[0].nama_kategori);
 						$("#biaya_kategori_detail").text(html.data[0].biaya_kategori);			
 
@@ -338,6 +352,7 @@ $(document).on('click','.edit',function(){
 						$("#myModal").modal("show");
 					}
 				});		
+				
 			});//penutup Edit
 
 //--------------------------------------------------------------------------------------------
