@@ -25,12 +25,13 @@
 		    <button class="btn btn-light btn-sm" onclick="window.location.href='/Lokasi'">Lokasi</button>
 		    <button class="btn btn-light btn-sm" onclick="window.location.href='/penjual'">Penjual</button>
 		    <button class="btn btn-light btn-sm active" onclick="window.location.href='/'">Barang</button>
-		<hr><br>
-
-		<h2 style="text-align: center; color:red ">DATA KATEGORI</h2>
-		<hr>
-		<button type="button" class="btn btn-primary" id="buttonTambah">Tambah</button>
-		<br><br>
+			<hr><br>
+		</div>
+			<h2 style="text-align: center; color:red ">DATA KATEGORI</h2>
+			<hr>
+			<button type="button" class="btn btn-primary" id="buttonTambah">Tambah</button>
+			<br><br>
+	</div>
 
 <!-- ----------------------------------------------------------------------------------------- -->
 		<span id="notif">
