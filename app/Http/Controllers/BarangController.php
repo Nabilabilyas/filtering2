@@ -73,10 +73,24 @@ class BarangController extends Controller
       }
     }
 
+    // detail
+    public function detail(request $request, $kode_barang){
+    	if ($request->ajax()) {
+            $data  = Barang::where('kode_barang', '=', $kode_barang)->get();
+            return response()->json(['data'=>$data]);
+        }
+    }
+
     //edit
+<<<<<<< HEAD
     public function edit(request $request, $kode_penjual){
       if ($request->ajax()) {
             $data  = Penjual::where('kode_penjual', '=', $kode_penjual)->get();
+=======
+    public function edit(request $request, $kode_barang){
+    	if ($request->ajax()) {
+            $data  = Barang::where('kode_barang', '=', $kode_barang)->get();
+>>>>>>> 42ddbfb6065d0d77f6cabda46f757343a18a02f7
             return response()->json(['data'=>$data]);
         }
     }

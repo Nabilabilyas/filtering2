@@ -174,7 +174,22 @@
 				<tr>
 					<td>Harga Barang</td>
 					<td>:</td>
-					<td id="usia_barang_detail"></td>
+					<td id="harga_barang_detail"></td>
+				</tr>
+				<tr>
+					<td>Kode Lokasi</td>
+					<td>:</td>
+					<td id="kode_lokasi_detail"></td>
+				</tr>
+				<tr>
+					<td>Kode Kategori</td>
+					<td>:</td>
+					<td id="kode_kategori_detail"></td>
+				</tr>
+				<tr>
+					<td>Kode Penjual</td>
+					<td>:</td>
+					<td id="kode_penjual_detail"></td>
 				</tr>
 			</table>	
 	      </div>
@@ -277,7 +292,7 @@
 					alert('Character must be 5 Digits');
 				}else{
 					$.ajax({
-					url:"/penjual/update",
+					url:"/barang/update",
 					method: "POST",
 					data: new FormData(this),
 					contentType: false,
@@ -306,12 +321,15 @@
 			var id= $(this).attr('id');			
 			// alert (id);
 			$.ajax({
-				url:"/penjual/detail/"+id,
+				url:"/barang/detail/"+id,
 				dataType:"json",
 				success:function(html){
+					$("#kode_barang_detail").text(html.data[0].kode_penjual);
+					$("#nama_barang_detail").text(html.data[0].nama_barang);
+					$("#harga_barang_detail").text(html.data[0].harga_barang);
+					$("#kode_lokasi_detail").text(html.data[0].kode_lokasi);
+					$("#kode_kategori_detail").text(html.data[0].kode_barang);
 					$("#kode_penjual_detail").text(html.data[0].kode_penjual);
-					$("#nama_penjual_detail").text(html.data[0].nama_penjual);
-					$("#usia_penjual_detail").text(html.data[0].usia_penjual);
 					$("#tombol_action").text("Update Data");
 					$("#myModalDetail").modal("show");
 				}
