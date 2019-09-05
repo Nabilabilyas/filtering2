@@ -4,7 +4,10 @@
 	<title>Master Kategori</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/datatables.min.css">
+<style>
+.width {width: 280px;}
 
+</style>
 	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
 	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="assets/js/datatables.min.js"></script>
@@ -13,6 +16,7 @@
 <body>
 <!-- ------------------------------------------------------------------------------- -->
 <!--Tampilan Awal -->
+<<<<<<< HEAD
 	<div class="container">
 		<img src="/image/oles.png">
 		<h2 style="text-align: center;">OLES</h2><hr>
@@ -20,20 +24,45 @@
 		<div style="text-align: right;">
 			<button class="btn btn-primary light btn-sm" onclick="window.location.href='/home'">Home</button>
 			<button class="btn btn-primary light btn-sm" onclick="window.location.href='/setting'">Setting</button>
+=======
+		<div class="container">
+		<div style="text-align: right;">
+			<p><img style="float: left; margin: 0px 15px 15px 0px;" height="15%" width="15%" src="/images/oles.png">
+			<h1 style="text-align: center;">OLES</h1><hr>
+			<h1 style="text-align: center;">Cara Tepat Jual Lambat</h1>
+			<button class="btn btn-primary active">Home</button>
+			<button class="btn btn-primary">Setting</button>
+			<hr>
+			<br>
+			<br>
+>>>>>>> 8075e1732e30be53f3a58fd26d57aade5320c899
 		</div>
-
+		
+		<div style="text-align: center;">
 		<div class="btn-group btn-group-toggle" data-toggle="buttons">
+<<<<<<< HEAD
 		    <button class="btn btn-warning btn-sm active" onclick="window.location.href='/kategori'">Kategori</button>
 		    <button class="btn btn-primary light btn-sm" onclick="window.location.href='/Lokasi'">Lokasi</button>
 		    <button class="btn btn-primary light btn-sm" onclick="window.location.href='/penjual'">Penjual</button>
 		    <button class="btn btn-primary light btn-sm" onclick="window.location.href='/'">Barang</button>
 			<hr><br>
+=======
+			<button class="btn btn-warning btn-lg width" onclick="window.location.href='/kategori'">Kategori</button>
+			
+			
+		    <button class="btn btn-primary btn-lg width" onclick="window.location.href='/Lokasi'">Lokasi</button>
+		    
+		    <button class="btn btn-primary btn-lg width" onclick="window.location.href='/penjual'">Penjual</button> 
+		    <button class="btn btn-primary btn-lg width" onclick="window.location.href='/Barang'">Barang</button>	
 		</div>
-			<h2 style="text-align: center; color:red ">DATA KATEGORI</h2>
+>>>>>>> 8075e1732e30be53f3a58fd26d57aade5320c899
+		</div>
+		<div>
+			<h2 style="text-align: center; color:red ">Kategori</h2>
 			<hr>
-			<button type="button" class="btn btn-primary" id="buttonTambah">Tambah</button>
+			<button type="button" class="btn btn-primary width" id="buttonTambah">Tambah</button>
 			<br><br>
-
+		</div>
 <!-- ----------------------------------------------------------------------------------------- -->
 		<span id="notif">
 
