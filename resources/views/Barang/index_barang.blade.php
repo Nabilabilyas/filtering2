@@ -381,7 +381,22 @@
 			//--------------------------------------------------------------------------------------
 //aktif
 
-
+//modal Detail
+		$(document).on('click','.detail', function(){
+			var id= $(this).attr('id');			
+			// alert (id);
+			$.ajax({
+				url:"/Barang/detail/"+id,
+				dataType:"json",
+				success:function(html){
+					$("#kode_penjual_detail").text(html.data[0].kode_penjual);
+					$("#nama_penjual_detail").text(html.data[0].nama_penjual);
+					$("#usia_penjual_detail").text(html.data[0].usia_penjual);
+					$("#tombol_action").text("Update Data");
+					$("#myModalDetail").modal("show");
+				}
+			});
+		});//penutup 
 
 //-----------------------------------------------------------------------
 

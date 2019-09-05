@@ -75,7 +75,7 @@ class BarangController extends Controller
 
     // detail
     public function detail(request $request, $kode_barang){
-    	if ($request->ajax()) {
+      if ($request->ajax()) {
             $data  = Barang::where('kode_barang', '=', $kode_barang)->get();
             return response()->json(['data'=>$data]);
         }
