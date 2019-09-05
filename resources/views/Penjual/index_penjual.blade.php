@@ -43,7 +43,7 @@
 		<div>
 			<h2 style="text-align: center; color:red ">Penjual</h2>
 			<hr>
-			<button type="button" class="btn btn-primary width" id="buttonTambah">Tambah</button>
+			<button type="button" class="btn btn-primary width" id="buttonAdd">Tambah</button>
 			<br><br>
 		</div>	
 		<!-- Button trigger modal -->
@@ -225,11 +225,11 @@
 		});
 
 		$('#buttonAdd').click(function() {
-				$('.modal-title-add').text('Tambah Data Penjual');
-				$('#action').val('Tambah');
-				$('#tombol_action').text('Tambah Data');
-				$('#myModal').modal('show');
-			});
+			$('.modal-title-add').text('Tambah Data Penjual');
+			$('#action').val('Tambah');
+			$('#tombol_action').text('Tambah Data');
+			$('#myModal').modal('show');
+		});
 
 		$('#myModal').on('hidden.bs.modal', function (e){
 			$("#kode_penjual").val('');
@@ -369,7 +369,7 @@
 			$("#modal_aktif").modal('show');
 		});//penutup delete
 
-		//action delete
+		//action activate
 		$("#activate").click(function(){
 			$.ajax({
 				url:"/penjual/aktif/"+kode,
