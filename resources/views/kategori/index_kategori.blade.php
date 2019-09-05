@@ -14,17 +14,19 @@
 <!-- ------------------------------------------------------------------------------- -->
 <!--Tampilan Awal -->
 	<div class="container">
+		<img src="/image/oles.png">
 		<h2 style="text-align: center;">OLES</h2><hr>
+
 		<div style="text-align: right;">
-			<button class="btn btn-primary active" onclick="window.location.href='/home'">Home</button>
-			<button class="btn btn-primary">Setting</button>
+			<button class="btn btn-primary light btn-sm" onclick="window.location.href='/home'">Home</button>
+			<button class="btn btn-primary light btn-sm" onclick="window.location.href='/setting'">Setting</button>
 		</div>
 
 		<div class="btn-group btn-group-toggle" data-toggle="buttons">
-		    <button class="btn btn-success btn-sm active" onclick="window.location.href='/kategori'">Kategori</button>
-		    <button class="btn btn-light btn-sm" onclick="window.location.href='/Lokasi'">Lokasi</button>
-		    <button class="btn btn-light btn-sm" onclick="window.location.href='/penjual'">Penjual</button>
-		    <button class="btn btn-light btn-sm" onclick="window.location.href='/'">Barang</button>
+		    <button class="btn btn-warning btn-sm active" onclick="window.location.href='/kategori'">Kategori</button>
+		    <button class="btn btn-primary light btn-sm" onclick="window.location.href='/Lokasi'">Lokasi</button>
+		    <button class="btn btn-primary light btn-sm" onclick="window.location.href='/penjual'">Penjual</button>
+		    <button class="btn btn-primary light btn-sm" onclick="window.location.href='/'">Barang</button>
 			<hr><br>
 		</div>
 			<h2 style="text-align: center; color:red ">DATA KATEGORI</h2>

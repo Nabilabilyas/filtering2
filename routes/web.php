@@ -55,3 +55,8 @@ Route::get('/penjual/detail/{id}','PenjualController@detail');
 Route::get('/penjual/edit/{id}','PenjualController@edit');
 Route::get('/penjual/delete/{id}','PenjualController@delete');
 Route::get('/penjual/aktif/{id}','PenjualController@aktif');
+
+
+Route::get('/setting', function () {
+    return view('setting.index_setting');
+});
