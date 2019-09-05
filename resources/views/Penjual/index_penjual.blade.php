@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div class="container">
-		<h1 style="text-align: center;">Data Penjual</h1>
+		<h1>Data Penjual</h1>
 		<hr>
 		<!-- Button trigger modal -->
 		<div class="container">
