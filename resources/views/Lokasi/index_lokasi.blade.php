@@ -11,6 +11,23 @@
 </head>
 <body>
 	<div class="container">
+		<h2 style="text-align: center;">OLES</h2><hr>
+		<div style="text-align: right;">
+			<button class="btn btn-primary active">Home</button>
+			<button class="btn btn-primary">Setting</button>
+		</div>
+
+		<div class="btn-group btn-group-toggle" data-toggle="buttons">
+		    <button class="btn btn-light btn-sm" onclick="window.location.href='/kategori'">Kategori</button>
+		    <button class="btn btn-success btn-sm active" onclick="window.location.href='/Lokasi'">Lokasi</button>
+		    <button class="btn btn-light btn-sm" onclick="window.location.href='/penjual'">Penjual</button>
+		    <button class="btn btn-light btn-sm" onclick="window.location.href='/'">Item</button>
+		</div>
+		<hr><br>
+
+		<h3>Data Penjual</h3>
+		<hr>		
+	<div class="container">
 	<h2>LOKASI</h2><hr>
 	<button type="button" id="buttonAdd" class="btn btn-info">Tambah Data</button><br><br>
 
@@ -104,7 +121,7 @@
 		        	</tr>
 		        	<tr>
 		        		<td class="align-middle">Kode Pos Lokasi</td>
-		        		<td id="kode_pos_lokasi_detail"></td>
+		        		<td id="kode_pos_lokasi_detail" name="kode_pos_lokasi" id="kode_pos_lokasi"></td>
 		        	</tr>
 		        </table>
 		      </div>
@@ -291,7 +308,6 @@
 					$("#kode_lokasi").val(html.data[0].kode_lokasi);
 					$("#nama_lokasi").val(html.data[0].nama_lokasi);
 					$("#kode_pos_lokasi").val(html.data[0].kode_pos_lokasi);
-
 				}
 			});
 					$('#kode_lokasi').attr('readonly', true);
