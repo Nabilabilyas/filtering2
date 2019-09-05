@@ -28,17 +28,17 @@
 		
 		<div style="text-align: center;">
 		<div class="btn-group btn-group-toggle" data-toggle="buttons">
-		    <button class="btn btn-light btn-sm" onclick="window.location.href='/kategori'">Kategori</button>
-		    <button class="btn btn-success btn-sm active" onclick="window.location.href='/Lokasi'">Lokasi</button>
-		    <button class="btn btn-light btn-sm" onclick="window.location.href='/penjual'">Penjual</button>
-		    <button class="btn btn-light btn-sm" onclick="window.location.href='/barang'">Barang</button>
+			<button class="btn btn-primary btn-lg width" onclick="window.location.href='/kategori'">Kategori</button>			
+		    <button class="btn btn-warning btn-lg active width" onclick="window.location.href='/Lokasi'">Lokasi</button>		    
+		    <button class="btn btn-primary btn-lg width" onclick="window.location.href='/penjual'">Penjual</button> 
+		    <button class="btn btn-primary btn-lg width" onclick="window.location.href='/Barang'">Barang</button>	
 		</div>
 		</div>
 
 		<div>
 			<h2 style="text-align: center; color:red ">LOKASI</h2>
 			<hr>
-			<button type="button" class="btn btn-primary width" id="buttonTambah">Tambah</button>
+			<button type="button" class="btn btn-primary width" id="buttonAdd">Tambah</button>
 			<br><br>
 		</div>
 

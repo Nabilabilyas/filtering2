@@ -32,7 +32,7 @@
 		
 		<div style="text-align: center;">
 		<div class="btn-group btn-group-toggle" data-toggle="buttons">
-			<button class="btn btn-warning btn-lg width" onclick="window.location.href='/kategori'">Kategori</button>
+			<button class="btn btn-warning btn-lg width active" onclick="window.location.href='/kategori'">Kategori</button>
 			
 			
 		    <button class="btn btn-primary btn-lg width" onclick="window.location.href='/Lokasi'">Lokasi</button>
