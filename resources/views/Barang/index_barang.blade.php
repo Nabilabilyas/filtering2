@@ -386,12 +386,15 @@
 			var id= $(this).attr('id');			
 			// alert (id);
 			$.ajax({
-				url:"/Barang/detail/"+id,
+				url:"/barang/detail/"+id,
 				dataType:"json",
 				success:function(html){
+					$("#kode_barang_detail").text(html.data[0].kode_barang);
+					$("#nama_barang_detail").text(html.data[0].nama_barang);
+					$("#harga_barang_detail").text(html.data[0].harga_barang);
+					$("#kode_lokasi_detail").text(html.data[0].kode_lokasi);
+					$("#kode_kategori_detail").text(html.data[0].kode_kategori);
 					$("#kode_penjual_detail").text(html.data[0].kode_penjual);
-					$("#nama_penjual_detail").text(html.data[0].nama_penjual);
-					$("#usia_penjual_detail").text(html.data[0].usia_penjual);
 					$("#tombol_action").text("Update Data");
 					$("#myModalDetail").modal("show");
 				}
