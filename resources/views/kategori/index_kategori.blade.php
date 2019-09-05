@@ -17,18 +17,30 @@
 <!-- ------------------------------------------------------------------------------- -->
 <!--Tampilan Awal -->
 
+<<<<<<< HEAD
 	<div class="container">
 		<div style="text-align: right;">
+=======
+>>>>>>> b8b9c07db8ea9b10e2fb8798079e3b5c2dd1a359
 		<div class="container">
 		<div style="text-align: right;">
 			<p><img style="float: left; margin: 0px 15px 15px 0px;" height="15%" width="15%" src="/images/oles.png">
 			<h1 style="text-align: center;">OLES</h1><hr>
 			<h1 style="text-align: center;">Cara Tepat Jual Lambat</h1>
+<<<<<<< HEAD
 			<button class="btn btn-primary btn-lg" onclick="window.location.href='/home'">Home</button>
 			<button class="btn btn-primary btn-lg" onclick="window.location.href='/setting'">Setting</button>
 			<hr>
 			<br>
 			<br>
+=======
+			<button class="btn btn-primary light btn-lg" onclick="window.location.href='/home'">Home</button>
+			<button class="btn btn-warning btn-lg active" onclick="window.location.href='/setting'">Setting</button>
+			<hr>
+			<br>
+			<br>
+
+>>>>>>> b8b9c07db8ea9b10e2fb8798079e3b5c2dd1a359
 		</div>
 		
 		<div style="text-align: center;">
@@ -38,6 +50,10 @@
 		    <button class="btn btn-primary btn-lg width" onclick="window.location.href='/penjual'">Penjual</button> 
 		    <button class="btn btn-primary btn-lg width" onclick="window.location.href='/Barang'">Barang</button>	
 		</div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> b8b9c07db8ea9b10e2fb8798079e3b5c2dd1a359
 		</div>
 		<div>
 			<h2 style="text-align: center; color:red ">Kategori</h2>
