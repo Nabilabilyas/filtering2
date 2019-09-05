@@ -76,3 +76,5 @@ Route::get('/barang','BarangController@index');
 Route::post('/barang/add','BarangController@add');
 Route::post('/barang/update','BarangController@update');
 Route::get('/barang/detail/{id}','BarangController@detail');
+Route::get('/barang/delete/{id}','BarangController@delete');
+Route::get('/barang/aktif/{id}','BarangController@aktif');
