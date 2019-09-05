@@ -180,7 +180,7 @@
  			processing : true,
  			serverside : true,
  			ajax:{
- 				url: "/",
+ 				url: "/Lokasi",
  			},
  			columns:[
  				{
