@@ -8,11 +8,11 @@
 	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
 	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="assets/js/datatables.min.js"></script>
-	
+
 </head>
 <body>
 	<div class="container">
-		<h2 style="text-align: center;">OLES</h2><hr>
+		<h1 style="text-align: center;">OLES</h1><hr>
 		<div style="text-align: right;">
 			<button class="btn btn-primary active">Home</button>
 			<button class="btn btn-primary">Setting</button>

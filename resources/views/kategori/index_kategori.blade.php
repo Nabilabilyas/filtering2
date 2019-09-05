@@ -13,9 +13,9 @@
 <body>
 <!--Tampilan Awal -->
 	<div class="container">
-		<h2 style="text-align: center;">OLES</h2><hr>
+		<h1 style="text-align: center;">OLES</h1><hr>
 		<div style="text-align: right;">
-			<button class="btn btn-primary active" onclick="window.location.href='/home'">Home</button>
+			<button class="btn btn-primary active">Home</button>
 			<button class="btn btn-primary">Setting</button>
 		</div>
 
@@ -23,10 +23,11 @@
 		    <button class="btn btn-success btn-sm active" onclick="window.location.href='/kategori'">Kategori</button>
 		    <button class="btn btn-light btn-sm" onclick="window.location.href='/Lokasi'">Lokasi</button>
 		    <button class="btn btn-light btn-sm" onclick="window.location.href='/penjual'">Penjual</button>
-		    <button class="btn btn-light btn-sm active" onclick="window.location.href='/'">Barang</button>
+		    <button class="btn btn-light btn-sm" onclick="window.location.href='/Barang'">Barang</button>
+		</div>
 		<hr><br>
 
-		<h2 style="text-align: center; color:red ">DATA KATEGORI</h2>
+		<h2>Data Kategori</h2>
 		<hr>
 		<button type="button" class="btn btn-primary" id="buttonTambah">Tambah</button>
 		<br><br>
