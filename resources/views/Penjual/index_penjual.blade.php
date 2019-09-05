@@ -21,16 +21,8 @@
 		<div class="btn-group btn-group-toggle" data-toggle="buttons">
 		    <button class="btn btn-light btn-sm" onclick="window.location.href='/kategori'">Kategori</button>
 		    <button class="btn btn-light btn-sm" onclick="window.location.href='/Lokasi'">Lokasi</button>
-		    <button class="btn btn-success btn-sm active" onclick="window.location.href='/penjual'">Penjual</button>
-<<<<<<< HEAD
-
-		    <button class="btn btn-light btn-sm" onclick="window.location.href='/'">Item</button>
-
-		    <button class="btn btn-light btn-sm" onclick="window.location.href='/Barang'">Barang</button>
-
-=======
-		    <button class="btn btn-light btn-sm" onclick="window.location.href='/Barang'">Barang</button>
->>>>>>> 3e7f7c3c0b7e222620bac26ef6cb9cf74903ff93
+		    <button class="btn btn-success btn-sm active" onclick="window.location.href='/penjual'">Penjual</button>    
+		    <button class="btn btn-light btn-sm" onclick="window.location.href='/Barang'">Barang</button>		    
 		</div>
 		<hr><br>
 
