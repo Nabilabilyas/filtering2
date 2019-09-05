@@ -19,8 +19,8 @@
 			<p><img style="float: left; margin: 0px 15px 15px 0px;" height="15%" width="15%" src="/images/oles.png">
 			<h1 style="text-align: center;">OLES</h1><hr>
 			<h1 style="text-align: center;">Cara Tepat Jual Lambat</h1>
-			<button class="btn btn-primary active">Home</button>
-			<button class="btn btn-primary">Setting</button>
+			<button class="btn btn-primary light btn-lg" onclick="window.location.href='/home'">Home</button>
+			<button class="btn btn-warning btn-lg active" onclick="window.location.href='/setting'">Setting</button>
 			<hr>
 			<br>
 			<br>
@@ -41,7 +41,7 @@
 		<div>
 			<h2 style="text-align: center; color:red ">LOKASI</h2>
 			<hr>
-			<button type="button" class="btn btn-primary" id="buttonTambah">Tambah</button>
+			<button type="button" class="btn btn-primary width" id="buttonTambah">Tambah</button>
 			<br><br>
 		</div>
 

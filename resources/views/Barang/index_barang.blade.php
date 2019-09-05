@@ -14,8 +14,8 @@
 	<div class="container">
 		<h1 style="text-align: center;">OLES</h1><hr>
 		<div style="text-align: right;">
-			<button class="btn btn-primary active">Home</button>
-			<button class="btn btn-primary">Setting</button>
+			<button class="btn btn-primary light btn-sm" onclick="window.location.href='/home'">Home</button>
+			<button class="btn btn-warning btn-sm active" onclick="window.location.href='/setting'">Setting</button>
 		</div>
 
 		<div class="btn-group btn-group-toggle" data-toggle="buttons">
