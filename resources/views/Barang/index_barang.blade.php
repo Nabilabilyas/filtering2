@@ -1,37 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Transaksi Barang</title>
+	<title>Master Kategori</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/datatables.min.css">
+<style>
+.width {width: 280px;}
 
+</style>
 	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
 	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="assets/js/datatables.min.js"></script>
 
 </head>
 <body>
-	<div class="container">
-		<h1 style="text-align: center;">OLES</h1><hr>
-		<div style="text-align: right;">
-			<button class="btn btn-primary light btn-sm" onclick="window.location.href='/home'">Home</button>
-			<button class="btn btn-warning btn-sm active" onclick="window.location.href='/setting'">Setting</button>
-		</div>
+<!-- ------------------------------------------------------------------------------- -->
+<!--Tampilan Awal -->
 
-		<div class="btn-group btn-group-toggle" data-toggle="buttons">
-		    <button class="btn btn-light btn-sm" onclick="window.location.href='/kategori'">Kategori</button>
-		    <button class="btn btn-light btn-sm" onclick="window.location.href='/Lokasi'">Lokasi</button>
-		    <button class="btn btn-light btn-sm" onclick="window.location.href='/penjual'">Penjual</button>    
-		    <button class="btn btn-success btn-sm active" onclick="window.location.href='/barang'">Barang</button>		    
-		</div>
-		<hr><br>
-
-		<h2>Data Barang</h2>
-		<hr>		
-		<!-- Button trigger modal -->
 		<div class="container">
-			<button type="button" class="btn btn-primary" id="buttonAdd">Tambah</button>
+		<div style="text-align: right;">
+			<p><img style="float: left; margin: 0px 15px 15px 0px;" height="15%" width="15%" src="/images/oles.png">
+			<h1 style="text-align: center;">OLES</h1><hr>
+			<h1 style="text-align: center;">Cara Tepat Jual Lambat</h1>
+			<button class="btn btn-primary light btn-lg" onclick="window.location.href='/home'">Home</button>
+			<button class="btn btn-warning btn-lg active" onclick="window.location.href='/setting'">Setting</button>
+			<hr>
+			<br>
+			<br>
+
+		</div>
+		
+		<div style="text-align: center;">
+		<div class="btn-group btn-group-toggle" data-toggle="buttons">
+			<button class="btn btn-primary btn-lg width" onclick="window.location.href='/kategori'">Kategori</button>
+			
+			
+		    <button class="btn btn-primary btn-lg width" onclick="window.location.href='/Lokasi'">Lokasi</button>
+		    
+		    <button class="btn btn-primary btn-lg width" onclick="window.location.href='/penjual'">Penjual</button> 
+		    <button class="btn btn-warning btn-lg width active" onclick="window.location.href='/barang'">Barang</button>	
+		</div>
+
+		</div>
+		<div>
+			<br>
+			<h2 style="text-align: center; color:red ">BARANG</h2>
+			<hr>
+			<button type="button" class="btn btn-primary width" id="buttonAdd">Tambah</button>
 			<br><br>
+		</div>
 			<span id="notif">
 				
 			</span>
@@ -157,7 +174,22 @@
 				<tr>
 					<td>Harga Barang</td>
 					<td>:</td>
-					<td id="usia_barang_detail"></td>
+					<td id="harga_barang_detail"></td>
+				</tr>
+				<tr>
+					<td>Kode Lokasi</td>
+					<td>:</td>
+					<td id="kode_lokasi_detail"></td>
+				</tr>
+				<tr>
+					<td>Kode Kategori</td>
+					<td>:</td>
+					<td id="kode_kategori_detail"></td>
+				</tr>
+				<tr>
+					<td>Kode Penjual</td>
+					<td>:</td>
+					<td id="kode_penjual_detail"></td>
 				</tr>
 			</table>	
 	      </div>
@@ -260,7 +292,7 @@
 					alert('Character must be 5 Digits');
 				}else{
 					$.ajax({
-					url:"/penjual/update",
+					url:"/barang/update",
 					method: "POST",
 					data: new FormData(this),
 					contentType: false,
@@ -289,12 +321,15 @@
 			var id= $(this).attr('id');			
 			// alert (id);
 			$.ajax({
-				url:"/penjual/detail/"+id,
+				url:"/barang/detail/"+id,
 				dataType:"json",
 				success:function(html){
+					$("#kode_barang_detail").text(html.data[0].kode_penjual);
+					$("#nama_barang_detail").text(html.data[0].nama_barang);
+					$("#harga_barang_detail").text(html.data[0].harga_barang);
+					$("#kode_lokasi_detail").text(html.data[0].kode_lokasi);
+					$("#kode_kategori_detail").text(html.data[0].kode_barang);
 					$("#kode_penjual_detail").text(html.data[0].kode_penjual);
-					$("#nama_penjual_detail").text(html.data[0].nama_penjual);
-					$("#usia_penjual_detail").text(html.data[0].usia_penjual);
 					$("#tombol_action").text("Update Data");
 					$("#myModalDetail").modal("show");
 				}
