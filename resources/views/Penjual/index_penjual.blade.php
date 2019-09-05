@@ -10,8 +10,22 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Data Penjual</h1>
-		<hr>
+		<h2 style="text-align: center;">OLES</h2><hr>
+		<div style="text-align: right;">
+			<button class="btn btn-primary active">Home</button>
+			<button class="btn btn-primary">Setting</button>
+		</div>
+
+		<div class="btn-group btn-group-toggle" data-toggle="buttons">
+		    <button class="btn btn-light btn-sm" onclick="window.location.href='/kategori'">Kategori</button>
+		    <button class="btn btn-light btn-sm" onclick="window.location.href='/Lokasi'">Lokasi</button>
+		    <button class="btn btn-light btn-sm" onclick="window.location.href='/penjual'">Penjual</button>
+		    <button class="btn btn-success btn-sm active" onclick="window.location.href='/'">Item</button>
+		</div>
+		<hr><br>
+
+		<h3>Data Penjual</h3>
+		<hr>		
 		<!-- Button trigger modal -->
 		<div class="container">
 			<button type="button" class="btn btn-primary" id="buttonAdd">Tambah</button>
@@ -201,7 +215,7 @@
 			});
 
 		$('#myModal').on('hidden.bs.modal', function (e){
-			$("#kode_penjual").attr('readonly', false).val('');
+			$("#kode_penjual").val('');
 			$("#nama_penjual").val('');
 			$("#usia_penjual").val('');
 		});
