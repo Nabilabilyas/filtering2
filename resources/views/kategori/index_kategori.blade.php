@@ -16,46 +16,28 @@
 <body>
 <!-- ------------------------------------------------------------------------------- -->
 <!--Tampilan Awal -->
-<<<<<<< HEAD
-	<div class="container">
-		<img src="/image/oles.png">
-		<h2 style="text-align: center;">OLES</h2><hr>
 
+	<div class="container">
 		<div style="text-align: right;">
-			<button class="btn btn-primary light btn-sm" onclick="window.location.href='/home'">Home</button>
-			<button class="btn btn-primary light btn-sm" onclick="window.location.href='/setting'">Setting</button>
-=======
 		<div class="container">
 		<div style="text-align: right;">
 			<p><img style="float: left; margin: 0px 15px 15px 0px;" height="15%" width="15%" src="/images/oles.png">
 			<h1 style="text-align: center;">OLES</h1><hr>
 			<h1 style="text-align: center;">Cara Tepat Jual Lambat</h1>
-			<button class="btn btn-primary active">Home</button>
-			<button class="btn btn-primary">Setting</button>
+			<button class="btn btn-primary btn-lg" onclick="window.location.href='/home'">Home</button>
+			<button class="btn btn-primary btn-lg" onclick="window.location.href='/setting'">Setting</button>
 			<hr>
 			<br>
 			<br>
->>>>>>> 8075e1732e30be53f3a58fd26d57aade5320c899
 		</div>
 		
 		<div style="text-align: center;">
 		<div class="btn-group btn-group-toggle" data-toggle="buttons">
-<<<<<<< HEAD
-		    <button class="btn btn-warning btn-sm active" onclick="window.location.href='/kategori'">Kategori</button>
-		    <button class="btn btn-primary light btn-sm" onclick="window.location.href='/Lokasi'">Lokasi</button>
-		    <button class="btn btn-primary light btn-sm" onclick="window.location.href='/penjual'">Penjual</button>
-		    <button class="btn btn-primary light btn-sm" onclick="window.location.href='/'">Barang</button>
-			<hr><br>
-=======
 			<button class="btn btn-warning btn-lg width" onclick="window.location.href='/kategori'">Kategori</button>
-			
-			
-		    <button class="btn btn-primary btn-lg width" onclick="window.location.href='/Lokasi'">Lokasi</button>
-		    
+			<button class="btn btn-primary btn-lg width" onclick="window.location.href='/Lokasi'">Lokasi</button>   
 		    <button class="btn btn-primary btn-lg width" onclick="window.location.href='/penjual'">Penjual</button> 
 		    <button class="btn btn-primary btn-lg width" onclick="window.location.href='/Barang'">Barang</button>	
 		</div>
->>>>>>> 8075e1732e30be53f3a58fd26d57aade5320c899
 		</div>
 		<div>
 			<h2 style="text-align: center; color:red ">Kategori</h2>
