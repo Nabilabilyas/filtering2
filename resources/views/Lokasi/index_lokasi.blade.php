@@ -22,7 +22,7 @@
 		    <button class="btn btn-light btn-sm" onclick="window.location.href='/kategori'">Kategori</button>
 		    <button class="btn btn-success btn-sm active" onclick="window.location.href='/Lokasi'">Lokasi</button>
 		    <button class="btn btn-light btn-sm" onclick="window.location.href='/penjual'">Penjual</button>
-		    <button class="btn btn-light btn-sm" onclick="window.location.href='/'">Item</button>
+		    <button class="btn btn-light btn-sm" onclick="window.location.href='/barang'">Barang</button>
 		</div>
 		<hr><br>
 	<div class="container">
