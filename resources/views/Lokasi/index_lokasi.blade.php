@@ -41,7 +41,7 @@
 		<div>
 			<h2 style="text-align: center; color:red ">LOKASI</h2>
 			<hr>
-			<button type="button" class="btn btn-primary width" id="buttonTambah">Tambah</button>
+			<button type="button" class="btn btn-primary width" id="buttonAdd">Tambah</button>
 			<br><br>
 		</div>
 
