@@ -81,16 +81,8 @@ class BarangController extends Controller
         }
     }
 
-<<<<<<< HEAD
+
     //edit
-
-    public function edit(request $request, $kode_penjual){
-      if ($request->ajax()) {
-            $data  = Penjual::where('kode_penjual', '=', $kode_penjual)->get();
-
-=======
-    
->>>>>>> 09b89e8df73e2147cf81d9a8470162a57331a2f6
     public function edit(request $request, $kode_barang){
       if ($request->ajax()) {
             $data  = Barang::where('kode_barang', '=', $kode_barang)->get();
