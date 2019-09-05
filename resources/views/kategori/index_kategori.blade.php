@@ -17,13 +17,13 @@
 <!-- ------------------------------------------------------------------------------- -->
 <!--Tampilan Awal -->
 
-		<div class="container">
+	<div class="container">
 		<div style="text-align: right;">
 			<p><img style="float: left; margin: 0px 15px 15px 0px;" height="15%" width="15%" src="/images/oles.png">
 			<h1 style="text-align: center;">OLES</h1><hr>
 			<h1 style="text-align: center;">Cara Tepat Jual Lambat</h1>
-			<button class="btn btn-primary light btn-lg" onclick="window.location.href='/home'">Home</button>
-			<button class="btn btn-warning btn-lg active" onclick="window.location.href='/setting'">Setting</button>
+			<button class="btn btn-primary light btn-lg" onclick="window.location.href='/'">Halaman Utama</button>
+			<button class="btn btn-warning btn-lg active" onclick="window.location.href='/setting'">Pengaturan</button>
 			<hr>
 			<br>
 			<br>
@@ -92,21 +92,21 @@
 		      			<td >Kode Kategori</td>
 		      			<td>:</td>
 		      			<td>
-		      				<input class=" form-control input-lg "type="text" id="kode_kategori" name="kode_kategori"  placeholder="Kode Kategori"  required="" autocomplete="" >
+		      				<input class=" form-control input-lg "type="text" id="kode_kategori" name="kode_kategori"  placeholder="Kode Kategori" autocomplete="" > <!-- required="" --> 
 		      			</td>
 		      		</tr>
 		      		<tr>
 		      			<td class="align-middle">Nama Kategori</td>
 		      			<td>:</td>
 		      			<td>
-		      				<input class=" form-control input-lg " type="text" id="nama_kategori" name="nama_kategori"  placeholder="Nama Kategori" required="" >
+		      				<input class=" form-control input-lg " type="text" id="nama_kategori" name="nama_kategori"  placeholder="Nama Kategori"  >
 		      			</td>
 		      		</tr>
 		      		<tr>
 		      			<td class="align-middle">Biaya Kategori</td>
 		      			<td>:</td>
 		      			<td>
-		      				<input class=" form-control input-lg " type="text" id="biaya_kategori" name="biaya_kategori" placeholder="Biaya Kategori" required="" >
+		      				<input class=" form-control input-lg " type="text" id="biaya_kategori" name="biaya_kategori" placeholder="Biaya Kategori"  >
 		      			</td>
 		      		</tr>
 		      	</table>
@@ -259,10 +259,18 @@ $("#bioTable").DataTable({
 		event.preventDefault();
 		var action= $("#action").val();//get value 
 		var kode_kategori =$("#kode_kategori").val();
+		var nama_kategori =$("#nama_kategori").val();//
+		var biaya_kategori =$("#biaya_kategori").val();//
 			/*alert(id);*/
 		if (action=='Tambah') {
-	/*				alert("ajax untuk tambah");
-	*/				if (kode_kategori.length > 5 || kode_kategori.length <5) {
+	/*		alert("ajax untuk tambah");
+	*/		if (kode_kategori==''){
+				alert('kode kategori tidak boleh kosong');
+			}else if(nama_kategori==''){
+				alert('nama kategori tidak boleh kosong');
+			}else if(biaya_kategori==''){
+				alert('biaya kategori tidak boleh kosong');
+			}else if(kode_kategori.length > 5 || kode_kategori.length <5) {
 				alert('Karakter harus 5 digit');
 			}else{
 				$.ajax({
@@ -296,9 +304,15 @@ $("#bioTable").DataTable({
 	//Update------
 		if (action=='Edit') {
 	/*				alert("ajax untuk edit");
-	*/			if (kode_kategori.length > 5 || kode_kategori.length <5) {
-					alert('Karakter harus 5 digit');
-				}else{
+	*/		if (kode_kategori==''){
+				alert('kode kategori tidak boleh kosong');
+			}else if(nama_kategori==''){
+				alert('nama kategori tidak boleh kosong');
+			}else if(biaya_kategori==''){
+				alert('biaya kategori tidak boleh kosong');
+			}else if(kode_kategori.length > 5 || kode_kategori.length <5) {
+				alert('Karakter harus 5 digit');
+			}else{
 					$.ajax({
 					url:"/kategori/update",
 					method: "POST",

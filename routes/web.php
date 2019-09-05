@@ -74,7 +74,20 @@ Route::get('/setting', function () {
 
 Route::get('/barang','BarangController@index');
 Route::post('/barang/add','BarangController@add');
+<<<<<<< HEAD
+
+
+
+
+Route::get('/', function () {
+    return view('home1.index_home');
+});
+=======
 Route::post('/barang/update','BarangController@update');
 Route::get('/barang/detail/{id}','BarangController@detail');
+<<<<<<< HEAD
 Route::get('/barang/delete/{id}','BarangController@delete');
 Route::get('/barang/aktif/{id}','BarangController@aktif');
+=======
+>>>>>>> 631c7883bbd3ac45751352791c6083da650243e6
+>>>>>>> 88056893d3366cbff9ad2dbdfadda9650003bb18
