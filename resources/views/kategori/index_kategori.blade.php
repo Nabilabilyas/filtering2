@@ -38,7 +38,7 @@
 		    <button class="btn btn-primary btn-lg width" onclick="window.location.href='/Lokasi'">Lokasi</button>
 		    
 		    <button class="btn btn-primary btn-lg width" onclick="window.location.href='/penjual'">Penjual</button> 
-		    <button class="btn btn-primary btn-lg width" onclick="window.location.href='/Barang'">Barang</button>	
+		    <button class="btn btn-primary btn-lg width" onclick="window.location.href='/barang'">Barang</button>	
 		</div>
 
 		</div>
