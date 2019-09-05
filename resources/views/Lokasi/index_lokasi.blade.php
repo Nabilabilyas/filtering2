@@ -8,6 +8,7 @@
 	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
 	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="assets/js/datatables.min.js"></script>
+	
 </head>
 <body>
 	<div class="container">
@@ -24,9 +25,6 @@
 		    <button class="btn btn-light btn-sm" onclick="window.location.href='/'">Item</button>
 		</div>
 		<hr><br>
-
-		<h3>Data Penjual</h3>
-		<hr>		
 	<div class="container">
 	<h2>LOKASI</h2><hr>
 	<button type="button" id="buttonAdd" class="btn btn-info">Tambah Data</button><br><br>

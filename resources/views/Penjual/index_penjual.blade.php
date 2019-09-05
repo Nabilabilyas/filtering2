@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Penjual</title>
+	<title>Master Penjual</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/datatables.min.css">
+
 	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
 	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="assets/js/datatables.min.js"></script>
+	
 </head>
 <body>
 	<div class="container">
@@ -20,11 +22,7 @@
 		    <button class="btn btn-light btn-sm" onclick="window.location.href='/kategori'">Kategori</button>
 		    <button class="btn btn-light btn-sm" onclick="window.location.href='/Lokasi'">Lokasi</button>
 		    <button class="btn btn-success btn-sm active" onclick="window.location.href='/penjual'">Penjual</button>
-<<<<<<< HEAD
-		    <button class="btn btn-light btn-sm" onclick="window.location.href='/'">Item</button>
-=======
 		    <button class="btn btn-light btn-sm" onclick="window.location.href='/Barang'">Barang</button>
->>>>>>> b10ec7af1cf338642eabed516eba96c75c437d28
 		</div>
 		<hr><br>
 
