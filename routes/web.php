@@ -31,6 +31,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/halamanutama', function () {
     return view('HalamanUtama.index_halaman_utama');
 });
@@ -39,6 +40,11 @@ Route::get('/halamanutama', function () {
 Route::get('/barang', function () {
     return view('barang.index_barang');
 });
+
+// Route::get('/barang', function () {
+//     return view('Barang.index_barang');
+// });
+
 Route::get('/Lokasi','LokasiController@index');
 Route::post('/Lokasi/add','LokasiController@add');
 Route::get('/Lokasi/detail/{id}','LokasiController@detail');
@@ -65,3 +71,6 @@ Route::get('/penjual/aktif/{id}','PenjualController@aktif');
 Route::get('/setting', function () {
     return view('setting.index_setting');
 });
+
+Route::get('/barang','BarangController@index');
+Route::post('/barang/add','BarangController@add');
