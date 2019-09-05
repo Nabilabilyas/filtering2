@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
 use App\Barang;
 use App\Lokasi;
 use App\Penjual;
@@ -12,7 +13,7 @@ class BarangController extends Controller
 {
     public function index(){
     	if (request()->ajax()) {
-           return datatables()->of(Penjual::all())
+           return datatables()->of(Barang::all())
            		->addColumn('edit',function($data){
                     $button ='<button type="button" name="edit" id="'.$data->kode_barang.'"class="edit btn btn-primary btn-sm">Edit</button>';
             		return $button;
@@ -42,9 +43,41 @@ class BarangController extends Controller
             ->rawColumns(array("edit","delete","detail","status"))
             ->make(true);
        }
-       $lokasis = Lokasi::select('kode_lokasi')->get();
-       $kategoris = Kategori::select('kode_kategori')->get();
-       $penjuals = Penjual::select('kode_penjual')->get();
-    	return view::make('index_barang')->with('lokasis',$lokasis)->with('kategoris',$kategoris)->with('penjuals',$penjuals);
+
+       	$lokasis = Lokasi::select('kode_lokasi')->get();
+       	$kategoris = Kategori::select('kode_kategori')->get();
+       	$penjuals = Penjual::select('kode_penjual')->get();
+    	return view::make('Barang.index_barang')->with('lokasis',$lokasis)->with('kategoris',$kategoris)->with('penjuals',$penjuals);
+    }
+
+    //add
+    public function add(request $request){
+    	$is_delete = 1;
+    	$form_data = array(
+    		'kode_barang' => $request->kode_barang,
+    		'nama_barang' => $request->nama_barang,
+    		'harga_barang' => $request->harga_barang,
+    		'kode_lokasi' => $request->kode_lokasi,
+    		'kode_kategori' => $request->kode_kategori,
+    		'kode_penjual' => $request->kode_penjual,
+    		'status' => $request->is_delete,
+    		'is_delete' => $is_delete
+    	);
+    	$kode= Barang::where('kode_barang', '=', $request->kode_barang)->get();
+    	$count = count($kode);
+    	 if ($count == 1) {
+    	 	return response()->json(['errors'=>'Data already exist in Database']);
+    	 }else{
+    		Barang::create($form_data);
+    		return response()->json(['success'=>'Data added successfully']);
+    	}
+    }
+
+    //edit
+    public function edit(request $request, $kode_penjual){
+    	if ($request->ajax()) {
+            $data  = Penjual::where('kode_penjual', '=', $kode_penjual)->get();
+            return response()->json(['data'=>$data]);
+        }
     }
 }

@@ -29,13 +29,10 @@
 		
 		<div style="text-align: center;">
 		<div class="btn-group btn-group-toggle" data-toggle="buttons">
-			<button class="btn btn-primary width" onclick="window.location.href='/kategori'">Kategori</button>
-			
-			
-		    <button class="btn btn-primary width" onclick="window.location.href='/Lokasi'">Lokasi</button>
-		    
+			<button class="btn btn-primary width" onclick="window.location.href='/kategori'">Kategori</button>			
+		    <button class="btn btn-primary width" onclick="window.location.href='/Lokasi'">Lokasi</button>	    
 		    <button class="btn btn-warning btn-lg active width" onclick="window.location.href='/penjual'">Penjual</button> 
-		    <button class="btn btn-primary width" onclick="window.location.href='/Barang'">Barang</button>	
+		    <button class="btn btn-primary width" onclick="window.location.href='/barang'">Barang</button>	
 		</div>
 		</div>
 
@@ -89,17 +86,17 @@
 			        	<tr>
 			        		<td>Kode Penjual</td>
 			        		<td>:</td>
-			        		<td><input type="text" name="kode_penjual" id="kode_penjual" placeholder="Kode Penjual" required></td>
+			        		<td><input type="text" name="kode_penjual" id="kode_penjual" placeholder="Kode Penjual"></td>
 			        	</tr>
 			        	<tr>
 			        		<td>Nama Penjual</td>
 			        		<td>:</td>
-			        		<td><input type="text" name="nama_penjual" id="nama_penjual" placeholder="Nama Penjual" required></td>
+			        		<td><input type="text" name="nama_penjual" id="nama_penjual" placeholder="Nama Penjual"></td>
 			        	</tr>
 			        	<tr>
 			        		<td>Usia Penjual</td>
 			        		<td>:</td>
-			        		<td><input type="text" name="usia_penjual" id="usia_penjual" placeholder="Usia Penjual" required></td>
+			        		<td><input type="text" name="usia_penjual" id="usia_penjual" placeholder="Usia Penjual"></td>
 			         	</tr>         	
 			        </table>
 			      </div>
@@ -165,7 +162,6 @@
 		</div>
 		</div>
 	</div>
-
 	<!-- Modal Aktif -->
 	<div class="modal fade" id="modal_aktif">
 		<div class="modal-dialog">
@@ -241,11 +237,19 @@
 			e.preventDefault();
 			var action=$("#action").val();
 			var kode_penjual=$('#kode_penjual').val();
+			var nama_penjual=$('#nama_penjual').val();
+			var usia_penjual=$('#usia_penjual').val();
 			//alert(kode_penjual);
 			if (action=='Tambah') {
 				//alert('ajax untuk tambah');
-				if (kode_penjual.length>5||kode_penjual.length<5) {
-					alert('Character must be 5 Digits');
+				if (kode_penjual==''){
+					alert('Mohin diisi Kode Penjual');
+				}else if(nama_penjual == ''){
+					alert('Mohon diisi Nama Penjual');
+				}else if(usia_penjual == ''){
+					alert('Mohon diisi Usia Penjual');
+				}else if (kode_penjual.length>5||kode_penjual.length<5) {
+					alert('Karakter harus berisi 5 digit');
 				}else{
 					$.ajax({
 					url:"/penjual/add",
@@ -272,8 +276,14 @@
 				}
 			}//if Tambah
 			if (action=='Edit') {
-				if (kode_penjual.length >5 || kode_penjual.length <5) {
-					alert('Character must be 5 Digits');
+				if (kode_penjual==''){
+					alert('Mohin diisi Kode Penjual');
+				}else if(nama_penjual == ''){
+					alert('Mohon diisi Nama Penjual');
+				}else if(usia_penjual == ''){
+					alert('Mohon diisi Usia Penjual');
+				}else if (kode_penjual.length>5||kode_penjual.length<5) {
+					alert('Karakter harus berisi 5 digit');
 				}else{
 					$.ajax({
 					url:"/penjual/update",
