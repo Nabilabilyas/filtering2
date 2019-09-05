@@ -57,10 +57,10 @@
 		</div>
 	</div>
 	<!-- Modal Tambah -->
-	<div class="modal" id="myModal" tabindex="-1" role="dialog">
+	<!-- <div class="modal" id="myModal" tabindex="-1" role="dialog">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
-			    <form id="formPenjual">
+			    <form id="formPenjual"> -->
 			    	<!-- @csrf -->
 			      <div class="modal-header">
 			        <h5 class="modal-title-add">Modal title</h5>
@@ -86,42 +86,7 @@
 			        		<td>:</td>
 			        		<td><input type="text" name="harga_barang" id="harga_barang" placeholder="Harga Barang" required></td>
 			         	</tr>
-			        	<tr>
-			        		<td>Lokasi</td>
-			        		<td>:</td>
-			        		<td>
-			        			<select>
-			        				<option>Pilih</option>
-			        				@foreach($lokasis as $lokasi)
-									<option value="{{$lokasi->kode_lokasi}}">{{$lokasi->kode_lokasi}}</option>
-									@endforeach
-			        			</select>
-			        		</td>
-			         	</tr>
-			         	<tr>
-			        		<td>Kategori</td>
-			        		<td>:</td>
-			        		<td>
-			        			<select>
-			        				<option>Pilih</option>
-			        				@foreach($kategoris as $kategori)
-									<option value="{{$kategori->kode_kategori}}">{{$kategori->kode_kategori}}</option>
-									@endforeach
-			        			</select>
-			        		</td>
-			         	</tr>
-			         	<tr>
-			        		<td>Penjual</td>
-			        		<td>:</td>
-			        		<td>
-			        			<select>
-			        				<option>Pilih</option>
-			        				@foreach($penjuals as $penjual)
-									<option value="{{$penjual->kode_penjual}}">{{$penjual->kode_penjual}}</option>
-									@endforeach
-			        			</select>
-			        		</td>
-			         	</tr>         	
+			        	
 			        </table>
 			      </div>
 			      <div class="modal-footer">
@@ -133,7 +98,7 @@
 		</div>
 	</div>	
 </body>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	$(document).ready(function(){
 		$('#buttonAdd').click(function() {
 			$('.modal-title-add').text('Tambah Data Barang');
@@ -212,5 +177,5 @@
 			}//if edit
 		});
 	});
-</script>
+</script> -->
 </html>

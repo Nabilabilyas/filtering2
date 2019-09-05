@@ -31,6 +31,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/halamanutama', function () {
+    return view('HalamanUtama.index_halaman_utama');
+});
+
+
 Route::get('/barang', function () {
     return view('barang.index_barang');
 });

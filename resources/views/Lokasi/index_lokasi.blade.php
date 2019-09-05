@@ -38,7 +38,7 @@
 		<div>
 			<h2 style="text-align: center; color:red ">LOKASI</h2>
 			<hr>
-			<button type="button" class="btn btn-primary width" id="buttonAdd">Tambah</button>
+			<button type="button" class="btn btn-primary width" id="buttonTambah">Tambah</button>
 			<br><br>
 		</div>
 
@@ -82,19 +82,19 @@
 		        	<tr>
 		        		<td class="align-middle">Kode Lokasi</td>
 		        		<td>
-		        			<input class="form-control input-lg" type="text" name="kode_lokasi" id="kode_lokasi" placeholder="Kode Lokasi..." required="">
+		        			<input class="form-control input-lg" type="text" name="kode_lokasi" id="kode_lokasi" placeholder="Kode Lokasi..." >
 		        		</td>
 		        	</tr>
 		        	<tr>
 		        		<td class="align-middle">Nama Lokasi</td>
 		        		<td>
-		        			<input class="form-control input-lg" type="text" name="nama_lokasi" id="nama_lokasi" placeholder="Nama Lokasi..." required="">
+		        			<input class="form-control input-lg" type="text" name="nama_lokasi" id="nama_lokasi" placeholder="Nama Lokasi..." >
 		        		</td>
 		        	</tr>
 		        	<tr>
 		        		<td class="align-middle">Kode Pos Lokasi</td>
 		        		<td>
-		        			<input class="form-control input-lg" type="text" name="kode_pos_lokasi" id="kode_pos_lokasi" placeholder="Kode Lokasi..." required="">
+		        			<input class="form-control input-lg" type="text" name="kode_pos_lokasi" id="kode_pos_lokasi" placeholder="Kode Lokasi...">
 		        		</td>
 		        	</tr>
 		        </table>
@@ -192,7 +192,7 @@
 </body>
 <script type="text/javascript">
 	$(document).ready(function(){
-		$("#buttonAdd").click(function(){
+		$("#buttonTambah").click(function(){
 			$('.modal-title-add').text('Tambah Data');
 			$('#action').val('tambah');
 			$('#tombol_act').text('Add');
@@ -247,12 +247,25 @@
 			event.preventDefault();
 			var action = $("#action").val(); // get value
 			var kode_lokasi = $("#kode_lokasi").val();
+			var nama_lokasi = $("#nama_lokasi").val();
+			var kode_pos_lokasi = $("#kode_pos_lokasi").val();
 			// alert(action);
-			if (action == "tambah") {
+				if (action == "tambah") {
 				// alert("Ajax untuk tambah");
-				if (kode_lokasi.length > 5 || kode_lokasi.length < 5) {
+				if (kode_lokasi.length == '') {
+					alert('Nama Tidak boleh kosong');
+				}
+				else if (nama_lokasi.length == '') {
+					alert('Nama Tidak boleh kosong');
+				}
+				else if (kode_pos_lokasi.length == '') {
+					alert('Kode Pos Lokasi Tidak Boleh Kosong');
+				}
+				// alert("Ajax untuk tambah");
+				else if (kode_lokasi.length > 5 || kode_lokasi.length < 5) {
 					alert('Karakter harus 5 digit');
-				}else{
+				}
+				else{
 					$.ajax({
 						url:"/Lokasi/add",
 						method:"POST",
@@ -277,9 +290,19 @@
 					});					
 				}
 			};
-			if (action == "edit") {
-				//alert("Ajax untuk edit");
-				if (kode_lokasi.length > 5 || kode_lokasi.length < 5) {
+				if (action == "edit") {
+				// alert("Ajax untuk tambah");
+				if (kode_lokasi.length == '') {
+					alert('Nama Tidak boleh kosong');
+				}
+				else if (nama_lokasi.length == '') {
+					alert('Nama Tidak boleh kosong');
+				}
+				else if (kode_pos_lokasi.length == '') {
+					alert('Kode Pos Lokasi Tidak Boleh Kosong');
+				}
+				// alert("Ajax untuk tambah");
+				else if (kode_lokasi.length > 5 || kode_lokasi.length < 5) {
 					alert('Karakter harus 5 digit');
 				}else{
 					$.ajax({
