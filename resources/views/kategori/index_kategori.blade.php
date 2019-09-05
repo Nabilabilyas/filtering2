@@ -45,8 +45,16 @@
 		
 		<div style="text-align: center;">
 		<div class="btn-group btn-group-toggle" data-toggle="buttons">
+<<<<<<< HEAD
 			<button class="btn btn-warning btn-lg width" onclick="window.location.href='/kategori'">Kategori</button>
 			<button class="btn btn-primary btn-lg width" onclick="window.location.href='/Lokasi'">Lokasi</button>   
+=======
+			<button class="btn btn-warning btn-lg width active" onclick="window.location.href='/kategori'">Kategori</button>
+			
+			
+		    <button class="btn btn-primary btn-lg width" onclick="window.location.href='/Lokasi'">Lokasi</button>
+		    
+>>>>>>> 6156855dc099a0cab3a81e750d59227c13b2344d
 		    <button class="btn btn-primary btn-lg width" onclick="window.location.href='/penjual'">Penjual</button> 
 		    <button class="btn btn-primary btn-lg width" onclick="window.location.href='/Barang'">Barang</button>	
 		</div>
