@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Penjual</title>
+	<title>Master Penjual</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/datatables.min.css">
+
 	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
 	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="assets/js/datatables.min.js"></script>
+
 </head>
 <body>
 	<div class="container">
-		<h2 style="text-align: center;">OLES</h2><hr>
+		<h1 style="text-align: center;">OLES</h1><hr>
 		<div style="text-align: right;">
 			<button class="btn btn-primary active">Home</button>
 			<button class="btn btn-primary">Setting</button>
@@ -20,15 +22,19 @@
 		    <button class="btn btn-light btn-sm" onclick="window.location.href='/kategori'">Kategori</button>
 		    <button class="btn btn-light btn-sm" onclick="window.location.href='/Lokasi'">Lokasi</button>
 		    <button class="btn btn-success btn-sm active" onclick="window.location.href='/penjual'">Penjual</button>
+<<<<<<< HEAD
 
 		    <button class="btn btn-light btn-sm" onclick="window.location.href='/'">Item</button>
 
 		    <button class="btn btn-light btn-sm" onclick="window.location.href='/Barang'">Barang</button>
 
+=======
+		    <button class="btn btn-light btn-sm" onclick="window.location.href='/Barang'">Barang</button>
+>>>>>>> 3e7f7c3c0b7e222620bac26ef6cb9cf74903ff93
 		</div>
 		<hr><br>
 
-		<h3>Data Penjual</h3>
+		<h2>Data Penjual</h2>
 		<hr>		
 		<!-- Button trigger modal -->
 		<div class="container">
