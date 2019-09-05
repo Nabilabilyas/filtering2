@@ -10,5 +10,5 @@ use App\Kategori;
 
 class BarangController extends Controller
 {
-    //
+    
 }

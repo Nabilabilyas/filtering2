@@ -31,9 +31,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/', function () {
-//     return view('lokasi.index_lokasi');
-// });
+Route::get('/barang', function () {
+    return view('barang.index_barang');
+});
 Route::get('/Lokasi','LokasiController@index');
 Route::post('/Lokasi/add','LokasiController@add');
 Route::get('/Lokasi/detail/{id}','LokasiController@detail');
