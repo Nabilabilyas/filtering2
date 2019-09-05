@@ -86,6 +86,17 @@ Route::get('/barang/detail/{id}','BarangController@detail');
 //Halaman Utama
 Route::get('/home','HalamanUtamaController@index');
 
+
 // Route::get('/', function () {
 //     return view('home1.index_home');
 // });
+
+Route::get('/', function () {
+    return view('home1.index_home');
+});
+
+Route::post('/barang/update','BarangController@update');
+Route::get('/barang/detail/{id}','BarangController@detail');
+
+Route::get('/barang/delete/{id}','BarangController@delete');
+Route::get('/barang/aktif/{id}','BarangController@aktif');
