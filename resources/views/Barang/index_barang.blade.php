@@ -61,7 +61,7 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 			    <form id="formPenjual">
-			    	<!-- @csrf -->
+			    	@csrf
 			      <div class="modal-header">
 			        <h5 class="modal-title-add">Modal title</h5>
 			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -90,19 +90,19 @@
 			        		<td>Lokasi</td>
 			        		<td>:</td>
 			        		<td>
-			        			<select>
+			        			<select id="kode_lokasi" name="kode_lokasi">
 			        				<option>Pilih</option>
 			        				@foreach($lokasis as $lokasi)
 									<option value="{{$lokasi->kode_lokasi}}">{{$lokasi->kode_lokasi}}</option>
 									@endforeach
 			        			</select>
-			        		</td>
+		        		</td>
 			         	</tr>
 			         	<tr>
 			        		<td>Kategori</td>
 			        		<td>:</td>
 			        		<td>
-			        			<select>
+			        			<select id="kode_kategori" name="kode_kategori">
 			        				<option>Pilih</option>
 			        				@foreach($kategoris as $kategori)
 									<option value="{{$kategori->kode_kategori}}">{{$kategori->kode_kategori}}</option>
@@ -114,7 +114,7 @@
 			        		<td>Penjual</td>
 			        		<td>:</td>
 			        		<td>
-			        			<select>
+			        			<select id="kode_penjual" name="kode_penjual">
 			        				<option>Pilih</option>
 			        				@foreach($penjuals as $penjual)
 									<option value="{{$penjual->kode_penjual}}">{{$penjual->kode_penjual}}</option>
@@ -131,10 +131,83 @@
 			    </form>
 			</div>
 		</div>
+	</div>
+	<!-- Modal Detail -->
+	<div id="myModalDetail" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLabel">Detail Barang</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+			<table class="table">
+				<tr>
+					<td>Kode Barang</td>
+					<td>:</td>
+					<td id="kode_barang_detail"></td>
+				</tr>
+				<tr>
+					<td>Nama Barang</td>
+					<td>:</td>
+					<td id="nama_barang_detail"></td>
+				</tr>
+				<tr>
+					<td>Harga Barang</td>
+					<td>:</td>
+					<td id="usia_barang_detail"></td>
+				</tr>
+			</table>	
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+	      </div>
+		</form>
+	    </div>
+	  </div>	
 	</div>	
 </body>
 <script type="text/javascript">
 	$(document).ready(function(){
+		$("#myTable").DataTable({
+			processing:true,
+			serverside:true,
+			ajax:{
+				url:"/barang",
+			},
+			columns:[
+				{
+					data: 'kode_barang',
+					name: 'kode_barang'
+				},
+				{
+					data: 'nama_barang',
+					name: 'nama_barang'
+				},				
+				{
+					data: 'status',
+					name: 'status',
+				},
+				{
+					data: 'edit',
+					name: 'edit',
+					orderable: false,
+				},
+				{
+					data: 'delete',
+					name: 'delete',
+					orderable: false,
+				},
+				{
+					data: 'detail',
+					name: 'detail',
+					orderable: false,
+				}
+			]
+		});
+
 		$('#buttonAdd').click(function() {
 			$('.modal-title-add').text('Tambah Data Barang');
 			$('#action').val('Tambah');
@@ -159,7 +232,7 @@
 					alert('Character must be 5 Digits');
 				}else{
 					$.ajax({
-					url:"/penjual/add",
+					url:"/barang/add",
 					method: "POST",
 					data: new FormData(this),
 					contentType: false,
@@ -210,6 +283,22 @@
 					});//penutup ajax
 				}
 			}//if edit
+		});
+
+		$(document).on('click','.detail', function(){
+			var id= $(this).attr('id');			
+			// alert (id);
+			$.ajax({
+				url:"/penjual/detail/"+id,
+				dataType:"json",
+				success:function(html){
+					$("#kode_penjual_detail").text(html.data[0].kode_penjual);
+					$("#nama_penjual_detail").text(html.data[0].nama_penjual);
+					$("#usia_penjual_detail").text(html.data[0].usia_penjual);
+					$("#tombol_action").text("Update Data");
+					$("#myModalDetail").modal("show");
+				}
+			});
 		});
 	});
 </script>
