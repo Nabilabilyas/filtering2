@@ -31,7 +31,6 @@
 			<hr>
 			<button type="button" class="btn btn-primary" id="buttonTambah">Tambah</button>
 			<br><br>
-	</div>
 
 <!-- ----------------------------------------------------------------------------------------- -->
 		<span id="notif">
@@ -57,7 +56,7 @@
 			</table>
 		</div>
 	</div>
-
+</div>
 <!-- ---------------------------------------------------------------------------------------------- -->
 <!-- Modal Tambah -->
 <div class="modal" id="myModal" tabindex="-1" role="dialog" >
