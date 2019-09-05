@@ -87,6 +87,11 @@ Route::get('/barang/detail/{id}','BarangController@detail');
 >>>>>>> 09b89e8df73e2147cf81d9a8470162a57331a2f6
 
 
+Route::get('/barang/delete/{id}','BarangController@delete');
+Route::get('/barang/aktif/{id}','BarangController@aktif');
+
+
+
 //Halaman Utama
 Route::get('/home','HalamanUtamaController@index');
 
@@ -99,6 +104,9 @@ Route::get('/', function () {
     return view('home1.index_home');
 });
 
+
+
+
 Route::post('/barang/update','BarangController@update');
 <<<<<<< HEAD
 Route::get('/barang/detail/{id}','BarangController@detail');
@@ -107,4 +115,8 @@ Route::get('/barang/detail/{id}','BarangController@detail');
 
 Route::get('/barang/delete/{id}','BarangController@delete');
 Route::get('/barang/aktif/{id}','BarangController@aktif');
+<<<<<<< HEAD
 >>>>>>> 09b89e8df73e2147cf81d9a8470162a57331a2f6
+=======
+
+>>>>>>> babe12e4beb368126d90b71d832f34eae8831905
