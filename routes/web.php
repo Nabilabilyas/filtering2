@@ -24,19 +24,6 @@ Route::get('/setting', function () {
     return view('setting.index_setting');
 });
 
-
-// Route::get('/', function () {
-//     return view('home1.index_home');
-// });
-
-// Route::get('/', function () {
-//     return view('home1.index_home');
-// });
-// Route::get('/', function () {
-//     return view('kategori.index_kategori');
-// });
-
-
 //============================== Kategori
 Route::get('/kategori','KategoriController@index');
 Route::post('/kategori/add','KategoriController@add');
@@ -46,18 +33,6 @@ route::post('/kategori/update','KategoriController@update');
 route::get('/kategori/delete/{id}','KategoriController@delete');
 route::get('/kategori/aktif/{id}','KategoriController@aktif');
 
-// Route::get('/halamanutama', function () {
-//     return view('HalamanUtama.index_halaman_utama');
-// });
-
-
-// Route::get('/barang', function () {
-//     return view('barang.index_barang');
-// });
-
-// Route::get('/barang', function () {
-//     return view('Barang.index_barang');
-// });
 // ================================ Lokasi
 Route::get('/Lokasi','LokasiController@index');
 Route::post('/Lokasi/add','LokasiController@add');
@@ -66,13 +41,6 @@ Route::get('/Lokasi/delete/{id}','LokasiController@delete');
 Route::get('/Lokasi/aktif/{id}','LokasiController@aktif');
 Route::get('/Lokasi/edit/{id}','LokasiController@edit');
 Route::post('/Lokasi/update','LokasiController@update');
-// Route::get('/','PelajaranController@index');
-// Route::get('/penjual','PenjualController@index');
-
-// Route::get('/coba', function () {
-//     return view('test_templating.dua');
-// });
-
 
 //================================== Penjual
 Route::get('/penjual','PenjualController@index');

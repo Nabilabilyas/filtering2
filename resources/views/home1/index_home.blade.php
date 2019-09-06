@@ -35,7 +35,7 @@
 
 		</span>
 		<div style="text-align: center">
-			<table class="table table-hover table-stripped table-bordered" id="bioTable" >
+			<table class="table table-hover table-stripped table-bordered" id="myTable" >
 				<thead style="background-color: lightcyan">
 					<tr>
 						<th rowspan="2" class="align-middle">Nama Barang</th>
@@ -45,22 +45,17 @@
 						<th rowspan="2" class="align-middle">Nama Penjual</th>
 					</tr>
 				</thead>
-				<tbody>
-					<tr>
-						<td>{{}}</td>
-					</tr>
-				</tbody>
 			</table>
 		</div>
 	</div>
 </body>
 <script type="text/javascript">
-	
-$("#bioTable").DataTable({
+	$(document).ready(function(){
+		$("#myTable").DataTable({
 			processing : true,
 			serverside : true,
 			ajax:{
-				url:"/kategori",
+				url:"/home",
 			},
 			columns:[
 				{
@@ -83,12 +78,8 @@ $("#bioTable").DataTable({
 					data: 'nama_penjual',
 					name: 'nama_penjual'
 				}
-
-			]
+			]			
 		});
-
-//penutup yajra
-
-
+	});	
 </script>
 </html>
