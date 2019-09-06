@@ -22,8 +22,8 @@
 			<p><img style="float: left; margin: 0px 15px 15px 0px;" height="15%" width="15%" src="/images/oles.png">
 			<h1 style="text-align: center;">OLES</h1><hr>
 			<h1 style="text-align: center;">Cara Tepat Jual Lambat</h1>
-			<button class="btn btn-primary light btn-lg" onclick="window.location.href='/home'">Home</button>
-			<button class="btn btn-warning btn-lg active" onclick="window.location.href='/setting'">Setting</button>
+			<button class="btn btn-primary light btn-lg" onclick="window.location.href='/home'">Halaman Utama</button>
+			<button class="btn btn-warning btn-lg active" onclick="window.location.href='/setting'">Pengaturan</button>
 			<hr>
 			<br>
 			<br>
@@ -32,11 +32,8 @@
 		
 		<div style="text-align: center;">
 		<div class="btn-group btn-group-toggle" data-toggle="buttons">
-			<button class="btn btn-primary btn-lg width" onclick="window.location.href='/kategori'">Kategori</button>
-			
-			
-		    <button class="btn btn-primary btn-lg width" onclick="window.location.href='/Lokasi'">Lokasi</button>
-		    
+			<button class="btn btn-primary btn-lg width" onclick="window.location.href='/kategori'">Kategori</button>		
+		    <button class="btn btn-primary btn-lg width" onclick="window.location.href='/Lokasi'">Lokasi</button>		    
 		    <button class="btn btn-primary btn-lg width" onclick="window.location.href='/penjual'">Penjual</button> 
 		    <button class="btn btn-warning btn-lg width active" onclick="window.location.href='/barang'">Barang</button>	
 		</div>
@@ -66,7 +63,7 @@
 					</tr>
 					<tr>
 						<th>Edit</th>
-						<th>Delete</th>
+						<th>Hapus</th>
 						<th>Detail</th>
 					</tr>					
 				</thead>
@@ -91,17 +88,17 @@
 			        	<tr>
 			        		<td>Kode Barang</td>
 			        		<td>:</td>
-			        		<td><input type="text" name="kode_barang" id="kode_barang" placeholder="Kode Barang" required></td>
+			        		<td><input type="text" name="kode_barang" id="kode_barang" placeholder="Kode Barang"></td>
 			        	</tr>
 			        	<tr>
 			        		<td>Nama Barang</td>
 			        		<td>:</td>
-			        		<td><input type="text" name="nama_barang" id="nama_barang" placeholder="Nama Barang" required></td>
+			        		<td><input type="text" name="nama_barang" id="nama_barang" placeholder="Nama Barang"></td>
 			        	</tr>
 			        	<tr>
 			        		<td>Harga Barang</td>
 			        		<td>:</td>
-			        		<td><input type="text" name="harga_barang" id="harga_barang" placeholder="Harga Barang" required></td>
+			        		<td><input type="text" name="harga_barang" id="harga_barang" placeholder="Harga Barang"></td>
 			         	</tr>
 			        	<tr>
 			        		<td>Lokasi</td>
@@ -142,22 +139,22 @@
 			        </table>
 			      </div>
 			      <div class="modal-footer">
-			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			        <button type="submit" class="btn btn-primary" id="tombol_action">Save changes</button>
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+			        <button type="submit" class="btn btn-primary" id="tombol_action"></button>
 			      </div>
 			    </form>
 			</div>
 		</div>
 	</div>
 	<!-- --------------------------------------------------------------------------------------- -->
-<!-- modal delete -->
+	<!-- modal delete -->
 	<div class="modal fade" id="modal_delete" >
 		<div class="modal-dialog" >
 			<div class="modal-content" style="margin-top: 100px" >
 				<div class="modal-header" style="background-color:turquoise">
 				</div>
 					<div class="modal-body">
-					<h4 class="modal-title" style="text-align: center;">Hapus Jangan Ragu</h4>
+					<h4 class="modal-title" style="text-align: center;">Hapus data ?</h4>
 					</div>
 				<div class="modal-footer" style="margin: 0px; border-top: 0px; text-align: center;">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
@@ -292,11 +289,19 @@
 			e.preventDefault();
 			var action=$("#action").val();
 			var kode_barang=$('#kode_barang').val();
+			var nama_barang=$('#nama_barang').val();
+			var harga_barang=$('#harga_barang').val();
 			//alert(kode_barang);
 			if (action=='Tambah') {
 				//alert('ajax untuk tambah');
-				if (kode_barang.length>5||kode_barang.length<5) {
-					alert('Character must be 5 Digits');
+				if (kode_barang==''){
+					alert('Mohin diisi Kode Barang');
+				}else if(nama_barang == ''){
+					alert('Mohon diisi Nama Barang');
+				}else if(usia_barang == ''){
+					alert('Mohon diisi Harga Barang');
+				}else if(kode_barang.length>5||kode_barang.length<5) {
+					alert('Karakter harus berisi 5 digit');
 				}else{
 					$.ajax({
 					url:"/barang/add",
@@ -323,8 +328,14 @@
 				}
 			}//if Tambah
 			if (action=='Edit') {
-				if (kode_barang.length >5 || kode_barang.length <5) {
-					alert('Character must be 5 Digits');
+				if (kode_barang==''){
+					alert('Mohin diisi Kode Barang');
+				}else if(nama_barang == ''){
+					alert('Mohon diisi Nama Barang');
+				}else if(usia_barang == ''){
+					alert('Mohon diisi Harga Barang');
+				}else if(kode_barang.length>5||kode_barang.length<5) {
+					alert('Karakter harus berisi 5 digit');
 				}else{
 					$.ajax({
 					url:"/barang/update",
@@ -380,7 +391,7 @@
 			$(document).on('click','.delete',function(){
 				id_delete=$(this).attr('id');
 				//alert(id);
-				$(".modal-title").text('Hapus Data');
+				$(".modal-title").text('Hapus Data ?');
 				$("#modal_delete").modal('show');
 				
 			});	//penutup delete(show modal)
@@ -390,12 +401,12 @@
 				$.ajax({
 					url:"/barang/delete/"+id_delete,
 					beforeSend:function(){
-						$("#delete_button").text('hapussss...');
+						$("#delete_button").text('Menghapus...');
 					},
 					success:function(){
 						setTimeout(function(){
 						$("#modal_delete").modal('hide');
-						$("#delete_button").text('Delete');
+						$("#delete_button").text('OK');
 						$("#myTable").DataTable().ajax.reload();
 					},500);
 				}
@@ -442,7 +453,7 @@
 			$.ajax({
 				url:"/barang/aktif/"+kode,
 				beforeSend:function(){
-					$("#delete_button").text('Mengaktifkan...');
+					$("#activate").text('Mengaktifkan...');
 				},
 				success:function(){
 					setTimeout(function(){

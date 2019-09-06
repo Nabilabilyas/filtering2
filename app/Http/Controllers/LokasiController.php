@@ -11,31 +11,30 @@ class LokasiController extends Controller
         if (request()->ajax()) {
             return datatables()->of(Lokasi::all())
             ->addColumn('edit',function($data){
-                $button = '<button type="button" name="edit" id="'.$data->kode_lokasi.'" class="edit btn btn-primary btn-sm">Edit</button>';
-                return $button;
-            })
+                    $button ='<button type="button" name="edit" id="'.$data->kode_lokasi.'"class="edit btn btn-primary btn-sm">Edit</button>';
+                    return $button;
+                })
             ->addColumn('delete',function($data){
-                if ($data->is_delete == 1) {
-                    $button = '<button type="button" name="delete" id="'.$data->kode_lokasi.'" class="delete btn btn-danger btn-sm">Delete</button>';
+                    if ($data->is_delete == 1) {
+                    $button ='<button type="button" name="delete" id="'.$data->kode_lokasi.'"class="delete btn btn-danger btn-sm">Delete</button>';
                     return $button;
-                    
-                }else{
-                    
-                }
-            })
+                    }
+                })
             ->addColumn('detail',function($data){
-                $button = '<button type="button" name="detail" id="'.$data->kode_lokasi.'" class="detail btn btn-success btn-sm">Detail</button>';
-                return $button;
-            })
-            ->addColumn('status',function($data){
-                if ($data->is_delete == 0) {
-                    $button = '<button type="button" name="aktif" id="'.$data->kode_lokasi.'" class="aktif btn btn-outline-success btn-sm">Aktifkan</button>'.'-'.'<button type="button" name="nonaktif" id="'.$data->kode_lokasi.'" class="nonaktif btn btn-outline-secondary btn-sm">Nonaktif</button>';
-                    return $button;                 
-                }else{
-                    $button = '<button type="" name="aktif" id="'.$data->kode_lokasi.'" class="btn btn-outline-info btn-sm">Aktif</button>';
+                    $button ='<button type="button" name="detail" id="'.$data->kode_lokasi.'"class="detail btn btn-secondary btn-sm">Detail</button>';
                     return $button;
-                }
-            })
+                })
+            ->addColumn('status',function($data){
+                    if ($data->is_delete==0) {
+                    $button ='<button type="button" name="nonaktif" id="'.$data->kode_lokasi.'"class="btn btn-danger btn-sm" disabled>Non-Aktif</button>';
+                    $button.="&nbsp;&nbsp;";
+                    $button.='<button type="button" name="aktif" id="'.$data->kode_lokasi.'"class=" aktif btn btn-success btn-sm">Aktifkan</button>';
+                    return $button;                         
+                    }else{
+                        $button ='<button type="button" name="Aktif" id="'.$data->kode_lokasi.'"class="btn btn-success btn-sm" disabled>Aktif</button>';
+                        return $button;
+                    }
+                })
             ->rawColumns(array("edit","delete","detail","status"))
             ->make(true);
         }

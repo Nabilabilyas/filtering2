@@ -12,13 +12,14 @@ class KategoriController extends Controller
         if (request()->ajax()) {
                return datatables()->of(Kategori::all())
                         ->addColumn('aktif',function($data){
-                            if ($data->isdelete==1) {
-                                $button = '<button type="button"id="'.$data->kode_kategori.'"class=" form-control input-lg btn btn-alert alert-success btn-sm" role="alert">Aktif</button>';   
-                                 return $button;
-
-                            }else{
-                                $button = '<button type="button"id="'.$data->kode_kategori.'"class="aktif  btn btn-success btn-sm">Aktifkan</button>'.'<button type="button"id="'.$data->kode_kategori.'"class="btn btn-alert alert-danger btn-sm" role="alert">Non Aktif</button>';
-                                return $button;
+                           if ($data->is_delete==0) {
+                                $button ='<button type="button" name="nonaktif" id="'.$data->kode_kategori.'"class="btn btn-danger btn-sm" disabled>Non-Aktif</button>';
+                                $button.="&nbsp;&nbsp;";
+                                $button.='<button type="button" name="aktif" id="'.$data->kode_kategori.'"class=" aktif btn btn-success btn-sm">Aktifkan</button>';
+                                return $button;                         
+                                }else{
+                                    $button ='<button type="button" name="Aktif" id="'.$data->kode_kategori.'"class="btn btn-success btn-sm" disabled>Aktif</button>';
+                                    return $button;
                                 }
                         	})
                         ->addColumn('edit',function($data){
@@ -26,10 +27,8 @@ class KategoriController extends Controller
                             return $button;
                             })  
                         ->addColumn('delete',function($data){
-                            if ($data->isdelete==0) {
-                                
-                            }else{
-                                $button = '<button type="button"id="'.$data->kode_kategori.'"class="delete btn btn-danger btn-sm">Hapus</button>';
+                            if ($data->is_delete == 1) {
+                                $button ='<button type="button" name="delete" id="'.$data->kode_kategori.'"class="delete btn btn-danger btn-sm">Delete</button>';
                                 return $button;
                                 }
                             })

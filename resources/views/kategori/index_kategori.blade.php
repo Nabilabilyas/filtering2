@@ -22,7 +22,7 @@
 			<p><img style="float: left; margin: 0px 15px 15px 0px;" height="15%" width="15%" src="/images/oles.png">
 			<h1 style="text-align: center;">OLES</h1><hr>
 			<h1 style="text-align: center;">Cara Tepat Jual Lambat</h1>
-			<button class="btn btn-primary light btn-lg" onclick="window.location.href='/'">Halaman Utama</button>
+			<button class="btn btn-primary light btn-lg" onclick="window.location.href='/home'">Halaman Utama</button>
 			<button class="btn btn-warning btn-lg active" onclick="window.location.href='/setting'">Pengaturan</button>
 			<hr>
 			<br>
@@ -148,7 +148,7 @@
 		      	</table>
 		      </div>
 		        <div class="modal-footer" style="background-color: turquoise">
-		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
 		      </div>
      		</form>
 		</div>
@@ -163,10 +163,10 @@
 				<div class="modal-header" style="background-color:turquoise">
 				</div>
 					<div class="modal-body">
-					<h4 class="modal-title" style="text-align: center;">Hapus Jangan Ragu</h4>
+					<h4 class="modal-title" style="text-align: center;">Hapus data ?</h4>
 					</div>
 				<div class="modal-footer" style="margin: 0px; border-top: 0px; text-align: center;">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
 					<button class="btn btn-danger" id="delete_button">Hapus</button>
 				</div>
 			</div>
@@ -180,11 +180,11 @@
 				<div class="modal-header" style="background-color:turquoise">
 				</div>
 					<div class="modal-body">
-					<h4 class="modal-title" style="text-align: center;">Hapus Jangan Ragu</h4>
+					<h4 class="modal-title" style="text-align: center;">Aktifkan data ?</h4>
 					</div>
 				<div class="modal-footer" style="margin: 0px; border-top: 0px; text-align: center;">
-					<button class="btn btn-success" id="aktif_button">Aktif</button>
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+					<button class="btn btn-success" id="aktif_button">Aktifkan</button>
 				</div>
 			</div>
 		</div>		
@@ -353,8 +353,7 @@ $(document).on('click','.detail',function(){
 /*						console.log(html);
 */						$("#kode_kategori_detail").text(html.data[0].kode_kategori);
 						$("#nama_kategori_detail").text(html.data[0].nama_kategori);
-						$("#biaya_kategori_detail").text(html.data[0].biaya_kategori);			
-
+						$("#biaya_kategori_detail").text(html.data[0].biaya_kategori);	
 						$(".modal-title").text('Detail Data');
 						$("#myModalDetail").modal("show");
 					}
@@ -377,7 +376,7 @@ $(document).on('click','.edit',function(){
 						$("#kode_kategori").attr('readonly',true);
 						$("#action").val("Edit");
 						$(".modal-title").text('Edit Data');
-						$("#action_button").text("Perbarui");
+						$("#action_button").text("Update");
 						$("#myModal").modal("show");
 					}
 				});		
@@ -400,12 +399,11 @@ $(document).on('click','.edit',function(){
 				$.ajax({
 					url:"/kategori/delete/"+id_delete,
 					beforeSend:function(){
-						$("#delete_button").text('hapussss...');
+						$("#delete_button").text('Menghapus...');
 					},
 					success:function(){
 						setTimeout(function(){
 						$("#modal_delete").modal('hide');
-						$("#delete_button").text('Delete');
 						$("#bioTable").DataTable().ajax.reload();
 					},500);
 				}
@@ -427,12 +425,11 @@ $(document).on('click','.edit',function(){
 				$.ajax({
 					url:"/kategori/aktif/"+id_aktif,
 					beforeSend:function(){
-						$("#aktif_button").text('Aktif...');
+						$("#aktif_button").text('Mengaktifkan...');
 					},
 					success:function(){
 						setTimeout(function(){
 						$("#modal_aktif").modal('hide');
-						$("#aktif_button").text('Aktif');
 						$("#bioTable").DataTable().ajax.reload();
 					},500);
 				}

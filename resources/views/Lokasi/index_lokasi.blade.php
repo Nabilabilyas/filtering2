@@ -19,8 +19,8 @@
 			<p><img style="float: left; margin: 0px 15px 15px 0px;" height="15%" width="15%" src="/images/oles.png">
 			<h1 style="text-align: center;">OLES</h1><hr>
 			<h1 style="text-align: center;">Cara Tepat Jual Lambat</h1>
-			<button class="btn btn-primary light btn-lg" onclick="window.location.href='/home'">Home</button>
-			<button class="btn btn-warning btn-lg active" onclick="window.location.href='/setting'">Setting</button>
+			<button class="btn btn-primary light btn-lg" onclick="window.location.href='/home'">Halaman Utama</button>
+			<button class="btn btn-warning btn-lg active" onclick="window.location.href='/setting'">Pengaturan</button>
 			<hr>
 			<br>
 			<br>
@@ -57,7 +57,7 @@
 				</tr>
 				<tr style="text-align: center;">
 					<th>Edit</th>
-					<th>Delete</th>
+					<th>Hapus</th>
 					<th>Detail</th>
 				</tr>
 			</thead>
@@ -150,14 +150,14 @@
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
 		      <div class="modal-header">
-		        <h5 class="modal-title-delete" id="exampleModalLabel">Detail Data</h5>
+		        <h5 class="modal-title-delete" id="exampleModalLabel">Hapus Data</h5>
 		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 		          <span aria-hidden="true">&times;</span>
 		        </button>
 		      </div>
 		      <div class="modal-body">
 		        <!-- <input type="text" name="action" id="action"><br><br> -->
-		        <h4 class="modal-title" style="text-align: center;">Yakin mau diapus?</h4>
+		        <h4 class="modal-title" style="text-align: center;">Hapus Data?</h4>
 		      </div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -179,7 +179,7 @@
 		      </div>
 		      <div class="modal-body">
 		        <!-- <input type="text" name="action" id="action"><br><br> -->
-		        <h4 class="modal-title" style="text-align: center;">Aktifin data?</h4>
+		        <h4 class="modal-title" style="text-align: center;">Aktifkan data?</h4>
 		      </div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -378,8 +378,8 @@
 		var id_delete;
 		$(document).on('click','.delete',function(){
 			id_delete = $(this).attr('id');
-			$('.modal-title-delete').text('Delete Data');
-			$('#tombol_delete').text('Delete Data');
+			$('.modal-title-delete').text('Hapus');
+			$('#tombol_delete').text('Hapus');
 			$('#myModalDelete').modal('show');
 		});
 
@@ -388,12 +388,11 @@
 			$.ajax({
 				url:"/Lokasi/delete/"+id_delete,
 				beforeSend:function(){
-					$("#tombol_delete").text('Deleting...');
+					$("#tombol_delete").text('Menghapus...');
 				},
 				success:function(){
 					setTimeout(function(){
 						$("#myModalDelete").modal('hide');
-						$("#tombol_delete").text('OK');
 						$("#myTableLokasi").DataTable().ajax.reload();
 					},500);
 				}
@@ -403,7 +402,7 @@
 		$(document).on('click','.aktif',function(){
 			id_aktif = $(this).attr('id');
 			$('.modal-title-aktif').text('Aktif Data');
-			$('#tombol_aktif').text('Aktif Data');
+			$('#tombol_aktif').text('Aktifkan');
 			$('#myModalAktif').modal('show');
 		});
 
@@ -412,12 +411,11 @@
 			$.ajax({
 				url:"/Lokasi/aktif/"+id_aktif,
 				beforeSend:function(){
-					$("#tombol_delete").text('Aktifing...');
+					$("#tombol_delete").text('Mengaktifkan...');
 				},
 				success:function(){
 					setTimeout(function(){
 						$("#myModalAktif").modal('hide');
-						$("#tombol_aktif").text('OK');
 						$("#myTableLokasi").DataTable().ajax.reload();
 					},500);
 				}
