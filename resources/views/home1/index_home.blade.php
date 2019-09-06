@@ -38,11 +38,11 @@
 			<table class="table table-hover table-stripped table-bordered" id="myTable" >
 				<thead style="background-color: lightcyan">
 					<tr>
-						<th rowspan="2" class="align-middle">Nama Barang</th>
-						<th rowspan="2" class="align-middle">Harga Barang</th>
-						<th rowspan="2" class="align-middle">Nama Lokasi</th>
-						<th rowspan="2" class="align-middle">Nama Kategori</th>
-						<th rowspan="2" class="align-middle">Nama Penjual</th>
+						<th  class="align-middle">Nama Barang</th>
+						<th  class="align-middle">Harga Barang</th>
+						<th  class="align-middle">Nama Lokasi</th>
+						<th  class="align-middle">Nama Kategori</th>
+						<th  class="align-middle">Nama Penjual</th>
 					</tr>
 				</thead>
 			</table>
