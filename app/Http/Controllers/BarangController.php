@@ -95,9 +95,12 @@ class BarangController extends Controller
       $form_data = array(
         'nama_barang' => $request->nama_barang,
         'harga_barang' => $request->harga_barang,
+        'kode_lokasi' => $request->kode_lokasi,
+        'kode_kategori' => $request->kode_kategori,
+        'kode_penjual' => $request->kode_penjual
       );
-      $kodeBar= Barang::where('kode_barang', '=', $request->kode_penjual)->update($form_data);
-      return response()->json(['success'=>'Data successfully updated']);
+      $kodeBar= Barang::where('kode_barang', '=', $request->kode_barang)->update($form_data);
+      return response()->json(['success'=>'Data berhasil diupdate']);
     }
 
     public function delete($id){
@@ -116,7 +119,7 @@ class BarangController extends Controller
       $form_data = array(
         'is_delete' => $is_delete
       );
-      $kodePel= Penjual::where('kode_penjual', '=', $kode)->update($form_data);
+      $kodePel= Barang::where('kode_barang', '=', $kode)->update($form_data);
       return response()->json(['success'=>'Data berhasil Dihapus']);
     }
 }

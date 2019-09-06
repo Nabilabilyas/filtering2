@@ -12,9 +12,31 @@
 */
 
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
+//Halaman Utama
+Route::get('/home','HalamanUtamaController@index');
+
+
+Route::get('/setting', function () {
+    return view('setting.index_setting');
+});
+
+
+// Route::get('/', function () {
+//     return view('home1.index_home');
+// });
+
+// Route::get('/', function () {
+//     return view('home1.index_home');
+// });
 // Route::get('/', function () {
 //     return view('kategori.index_kategori');
 // });
+
+
 //============================== Kategori
 Route::get('/kategori','KategoriController@index');
 Route::post('/kategori/add','KategoriController@add');
@@ -23,14 +45,6 @@ Route::get('/kategori/edit/{id}','KategoriController@edit');
 route::post('/kategori/update','KategoriController@update');
 route::get('/kategori/delete/{id}','KategoriController@delete');
 route::get('/kategori/aktif/{id}','KategoriController@aktif');
-
-
-
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
 
 // Route::get('/halamanutama', function () {
 //     return view('HalamanUtama.index_halaman_utama');
@@ -44,8 +58,6 @@ Route::get('/', function () {
 // Route::get('/barang', function () {
 //     return view('Barang.index_barang');
 // });
-
-
 // ================================ Lokasi
 Route::get('/Lokasi','LokasiController@index');
 Route::post('/Lokasi/add','LokasiController@add');
@@ -71,29 +83,11 @@ Route::get('/penjual/edit/{id}','PenjualController@edit');
 Route::get('/penjual/delete/{id}','PenjualController@delete');
 Route::get('/penjual/aktif/{id}','PenjualController@aktif');
 
-
-Route::get('/setting', function () {
-    return view('setting.index_setting');
-});
-
 //================= Barang
 Route::get('/barang','BarangController@index');
 Route::post('/barang/add','BarangController@add');
 Route::post('/barang/update','BarangController@update');
+Route::get('/barang/edit/{id}','BarangController@edit');
 Route::get('/barang/detail/{id}','BarangController@detail');
 Route::get('/barang/delete/{id}','BarangController@delete');
 Route::get('/barang/aktif/{id}','BarangController@aktif');
-
-
-
-//Halaman Utama
-Route::get('/home','HalamanUtamaController@index');
-
-
-// Route::get('/', function () {
-//     return view('home1.index_home');
-// });
-
-Route::get('/', function () {
-    return view('home1.index_home');
-});
