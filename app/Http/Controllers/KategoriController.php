@@ -12,7 +12,7 @@ class KategoriController extends Controller
         if (request()->ajax()) {
                return datatables()->of(Kategori::all())
                         ->addColumn('aktif',function($data){
-                           if ($data->is_delete==0) {
+                           if ($data->isdelete==0) {
                                 $button ='<button type="button" name="nonaktif" id="'.$data->kode_kategori.'"class="btn btn-danger btn-sm" disabled>Non-Aktif</button>';
                                 $button.="&nbsp;&nbsp;";
                                 $button.='<button type="button" name="aktif" id="'.$data->kode_kategori.'"class=" aktif btn btn-success btn-sm">Aktifkan</button>';
@@ -27,7 +27,7 @@ class KategoriController extends Controller
                             return $button;
                             })  
                         ->addColumn('delete',function($data){
-                            if ($data->is_delete == 1) {
+                            if ($data->isdelete == 1) {
                                 $button ='<button type="button" name="delete" id="'.$data->kode_kategori.'"class="delete btn btn-danger btn-sm">Delete</button>';
                                 return $button;
                                 }

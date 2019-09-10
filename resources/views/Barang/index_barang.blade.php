@@ -298,7 +298,7 @@
 					alert('Mohin diisi Kode Barang');
 				}else if(nama_barang == ''){
 					alert('Mohon diisi Nama Barang');
-				}else if(usia_barang == ''){
+				}else if(harga_barang == ''){
 					alert('Mohon diisi Harga Barang');
 				}else if(kode_barang.length>5||kode_barang.length<5) {
 					alert('Karakter harus berisi 5 digit');
@@ -332,7 +332,7 @@
 					alert('Mohin diisi Kode Barang');
 				}else if(nama_barang == ''){
 					alert('Mohon diisi Nama Barang');
-				}else if(usia_barang == ''){
+				}else if(harga_barang == ''){
 					alert('Mohon diisi Harga Barang');
 				}else if(kode_barang.length>5||kode_barang.length<5) {
 					alert('Karakter harus berisi 5 digit');
