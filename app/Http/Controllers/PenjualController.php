@@ -89,9 +89,11 @@ class PenjualController extends Controller
     }
 
     public function delete($kode){
+        
     	$is_delete=0;
     	$form_data = array(
-    		'is_delete' => $is_delete
+    		'is_delete' => $is_delete,
+            'tanggal_hapus' =>date('Y-m-d H:i:s')
     	);
     	$kodePel= Penjual::where('kode_penjual', '=', $kode)->update($form_data);
     	return response()->json(['success'=>'Data berhasil Dihapus']);
@@ -100,7 +102,8 @@ class PenjualController extends Controller
     public function aktif($kode){
     	$is_delete=1;
     	$form_data = array(
-    		'is_delete' => $is_delete
+    		'is_delete' => $is_delete,
+            'tanggal_hapus'=> NULL
     	);
     	$kodePel= Penjual::where('kode_penjual', '=', $kode)->update($form_data);
     	return response()->json(['success'=>'Data berhasil Dihapus']);
