@@ -280,7 +280,7 @@
 							if (data.success) {
 								html ='<div class="alert alert-success alert-dismissible fade show" role="alert"><strong>Selamat! </strong>'+data.success+'<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
 								$("#formLokasi")[0].reset();
-								// $("#formPelajaran").DataTable().ajax.reload();
+								$("#myTableLokasi").DataTable().ajax.reload();
 							}
 							if (data.error) {
 								html ='<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong></strong>'+data.error+'<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';

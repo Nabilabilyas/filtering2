@@ -15,7 +15,7 @@ class HalamanUtamaController extends Controller
     public function index() {
     	if (request()->ajax()) {
            return datatables()->of(DB::table('barang')
-           		->join('lokasi', 'lokasi.kode_lokasi', '=', 'barang.kode_lokasi')
+           	-> join('lokasi', 'lokasi.kode_lokasi', '=', 'barang.kode_lokasi')
 		        -> join('kategori', 'barang.kode_kategori', '=', 'kategori.kode_kategori')
 		        -> join('penjual', 'barang.kode_penjual', '=', 'penjual.kode_penjual')
 		        ->select('barang.nama_barang','barang.harga_barang','lokasi.nama_lokasi','kategori.nama_kategori','penjual.nama_penjual')

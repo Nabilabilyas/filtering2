@@ -12,13 +12,13 @@ class KategoriController extends Controller
         if (request()->ajax()) {
                return datatables()->of(Kategori::all())
                         ->addColumn('aktif',function($data){
-                           if ($data->is_delete==0) {
-                                $button ='<button type="button" name="nonaktif" id="'.$data->kode_kategori.'"class="btn btn-danger btn-sm" disabled>Non-Aktif</button>';
+                           if ($data->isdelete==0) {
+                                $button ='<button type="button" name="nonaktif" id="'.$data->kode_kategori.'"class="btn btn-alert alert-danger" disabled>Non-Aktif</button>';
                                 $button.="&nbsp;&nbsp;";
-                                $button.='<button type="button" name="aktif" id="'.$data->kode_kategori.'"class=" aktif btn btn-success btn-sm">Aktifkan</button>';
+                                $button.='<button type="button" name="aktif" id="'.$data->kode_kategori.'"class=" aktif btn btn-primary btn-sm">Aktifkan</button>';
                                 return $button;                         
                                 }else{
-                                    $button ='<button type="button" name="Aktif" id="'.$data->kode_kategori.'"class="btn btn-success btn-sm" disabled>Aktif</button>';
+                                    $button ='<button type="button" name="Aktif" id="'.$data->kode_kategori.'"class="form-control input-lg btn btn-alert alert-success btn-sms" disabled>Aktif</button>';
                                     return $button;
                                 }
                         	})
@@ -27,7 +27,7 @@ class KategoriController extends Controller
                             return $button;
                             })  
                         ->addColumn('delete',function($data){
-                            if ($data->is_delete == 1) {
+                            if ($data->isdelete == 1) {
                                 $button ='<button type="button" name="delete" id="'.$data->kode_kategori.'"class="delete btn btn-danger btn-sm">Delete</button>';
                                 return $button;
                                 }
@@ -82,7 +82,9 @@ public function edit (Request $request,$id){
     public function delete($id){
         $isdelete = 0;
         $Update = array(
-            'isdelete' =>$isdelete
+            'isdelete' =>$isdelete,
+            'tanggal_hapus'=>date('Y-m-d H:i:s')
+
         );
         Kategori::where ('kode_kategori','=',$id)->update($Update);
 
@@ -92,7 +94,9 @@ public function edit (Request $request,$id){
     public function aktif($id){
         $isdelete = 1;
         $Update = array(
-            'isdelete' =>$isdelete
+            'isdelete' =>$isdelete,
+            'tanggal_hapus'=>NULL
+
         );
         Kategori::where ('kode_kategori','=',$id)->update($Update);
 

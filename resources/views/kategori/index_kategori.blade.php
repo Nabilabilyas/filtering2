@@ -6,6 +6,13 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/datatables.min.css">
 <style>
 .width {width: 280px;}
+	div#bioTable_length{
+		text-align: left;
+	}
+	div#bioTable_info{
+		text-align: left;
+	}
+
 
 </style>
 	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
@@ -80,7 +87,7 @@
 	    <div class="modal-content">
 	     <form id="formKategori">	
 	     	@csrf
-		      <div class="modal-header" style="background-color: turquoise">
+		      <div class="modal-header" style="background-color: turquoise ">
 		        <h5 class="modal-title" id="formDataLabel" ></h5>
 		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 		        </button>
@@ -148,7 +155,7 @@
 		      	</table>
 		      </div>
 		        <div class="modal-footer" style="background-color: turquoise">
-		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
 		      </div>
      		</form>
 		</div>
@@ -215,7 +222,8 @@
 $("#bioTable").DataTable({
 			processing : true,
 			serverside : true,
-			ajax:{
+/*			"searching": false, 
+*/			ajax:{
 				url:"/kategori",
 			},
 			columns:[
@@ -266,12 +274,12 @@ $("#bioTable").DataTable({
 	/*		alert("ajax untuk tambah");
 	*/		if (kode_kategori==''){
 				alert('kode kategori tidak boleh kosong');
+			}else if(kode_kategori.length > 5 || kode_kategori.length <5) {
+				alert('Karakter harus 5 digit');
 			}else if(nama_kategori==''){
 				alert('nama kategori tidak boleh kosong');
 			}else if(biaya_kategori==''){
 				alert('biaya kategori tidak boleh kosong');
-			}else if(kode_kategori.length > 5 || kode_kategori.length <5) {
-				alert('Karakter harus 5 digit');
 			}else{
 				$.ajax({
 				url:"/kategori/add",
@@ -304,14 +312,14 @@ $("#bioTable").DataTable({
 	//Update------
 		if (action=='Edit') {
 	/*				alert("ajax untuk edit");
-	*/		if (kode_kategori==''){
-				alert('kode kategori tidak boleh kosong');
+	*/		if(kode_kategori.length > 5 || kode_kategori.length <5) {
+				alert('Karakter harus 5 digit');
 			}else if(nama_kategori==''){
 				alert('nama kategori tidak boleh kosong');
 			}else if(biaya_kategori==''){
 				alert('biaya kategori tidak boleh kosong');
-			}else if(kode_kategori.length > 5 || kode_kategori.length <5) {
-				alert('Karakter harus 5 digit');
+			}else if (kode_kategori==''){
+				alert('kode kategori tidak boleh kosong');
 			}else{
 					$.ajax({
 					url:"/kategori/update",
@@ -404,6 +412,7 @@ $(document).on('click','.edit',function(){
 					success:function(){
 						setTimeout(function(){
 						$("#modal_delete").modal('hide');
+						$("#delete_button").text('hapus');
 						$("#bioTable").DataTable().ajax.reload();
 					},500);
 				}
@@ -430,6 +439,7 @@ $(document).on('click','.edit',function(){
 					success:function(){
 						setTimeout(function(){
 						$("#modal_aktif").modal('hide');
+						$("#aktif_button").text('Aktif');
 						$("#bioTable").DataTable().ajax.reload();
 					},500);
 				}

@@ -7,6 +7,12 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/datatables.min.css">
 <style>
 .width {width: 280px;}
+ 	div#myTable_length{
+		text-align: left;
+	}
+	div#myTable_info{
+		text-align: left;
+	}
 
 </style>
 	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
