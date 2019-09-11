@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/datatables.min.css">
 <style>
 .width {width: 280px;}
+<<<<<<< HEAD
  	div#myTable_length{
 		text-align: left;
 	}
@@ -14,6 +15,10 @@
 		text-align: left;
 	}
 
+=======
+ div#myTable_length{ text-align: left; }
+ div#myTable_info{ text-align: left; }
+>>>>>>> 219593db355f13f1c26e103d74c74a1a8770c808
 </style>
 	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
 	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
@@ -27,10 +32,8 @@
 			<h1 style="text-align: center;">OLES</h1><hr>
 			<h1 style="text-align: center;">Cara Tepat Jual Lambat</h1>
 			<button class="btn btn-primary light btn-lg" onclick="window.location.href='/home'">Halaman Utama</button>
-			<button class="btn btn-warning btn-lg active" onclick="window.location.href='/setting'">Pengaturan</button>
+			<button class="btn btn-primary btn-lg" onclick="window.location.href='/setting'">Pengaturan</button>
 			<hr>
-			<br>
-			<br>
 		</div>
 		
 		<div style="text-align: center;">
@@ -88,21 +91,18 @@
 			      </div>
 			      <div class="modal-body">
 			      	<input type="hidden" name="action" id="action">
-			        <table class="table table-striped">
+			        <table class="table">
 			        	<tr>
 			        		<td>Kode Penjual</td>
-			        		<td>:</td>
-			        		<td><input type="text" name="kode_penjual" id="kode_penjual" placeholder="Kode Penjual"></td>
+			        		<td><input class="form-control input-lg" name="kode_penjual" id="kode_penjual" placeholder="Kode Penjual"></td>
 			        	</tr>
 			        	<tr>
 			        		<td>Nama Penjual</td>
-			        		<td>:</td>
-			        		<td><input type="text" name="nama_penjual" id="nama_penjual" placeholder="Nama Penjual"></td>
+			        		<td><input class="form-control input-lg" name="nama_penjual" id="nama_penjual" placeholder="Nama Penjual"></td>
 			        	</tr>
 			        	<tr>
 			        		<td>Usia Penjual</td>
-			        		<td>:</td>
-			        		<td><input type="text" name="usia_penjual" id="usia_penjual" placeholder="Usia Penjual"></td>
+			        		<td><input class="form-control input-lg" name="usia_penjual" id="usia_penjual" placeholder="Usia Penjual"></td>
 			         	</tr>         	
 			        </table>
 			      </div>
@@ -128,17 +128,14 @@
 			<table class="table">
 				<tr>
 					<td>Kode Penjual</td>
-					<td>:</td>
 					<td id="kode_penjual_detail"></td>
 				</tr>
 				<tr>
 					<td>Nama Penjual</td>
-					<td>:</td>
 					<td id="nama_penjual_detail"></td>
 				</tr>
 				<tr>
 					<td>Usia Penjual</td>
-					<td>:</td>
 					<td id="usia_penjual_detail"></td>
 				</tr>
 			</table>	
@@ -284,12 +281,12 @@
 			if (action=='Edit') {
 				if (kode_penjual==''){
 					alert('Mohin diisi Kode Penjual');
+				}else if (kode_penjual.length>5||kode_penjual.length<5) {
+					alert('Karakter harus berisi 5 digit');
 				}else if(nama_penjual == ''){
 					alert('Mohon diisi Nama Penjual');
 				}else if(usia_penjual == ''){
 					alert('Mohon diisi Usia Penjual');
-				}else if (kode_penjual.length>5||kode_penjual.length<5) {
-					alert('Karakter harus berisi 5 digit');
 				}else{
 					$.ajax({
 					url:"/penjual/update",
@@ -358,6 +355,7 @@
 			kode=$(this).attr("id");
 			//alert (id);
 			$("#modal_delete").modal('show');
+			$("#delete_button").text('Hapus');
 		});//penutup delete
 
 		//action delete
@@ -382,6 +380,7 @@
 			kode=$(this).attr("id");
 			//alert (id);
 			$("#modal_aktif").modal('show');
+			$("#activate").text('Aktifkan');
 		});//penutup delete
 
 		//action activate

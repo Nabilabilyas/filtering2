@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/datatables.min.css">
 <style>
 .width {width: 280px;}
+<<<<<<< HEAD
 	div#bioTable_length{
 		text-align: left;
 	}
@@ -14,6 +15,10 @@
 	}
 
 
+=======
+ div#bioTable_length{ text-align: left; }
+ div#bioTable_info{ text-align: left; }
+>>>>>>> 219593db355f13f1c26e103d74c74a1a8770c808
 </style>
 	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
 	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
@@ -30,7 +35,7 @@
 			<h1 style="text-align: center;">OLES</h1><hr>
 			<h1 style="text-align: center;">Cara Tepat Jual Lambat</h1>
 			<button class="btn btn-primary light btn-lg" onclick="window.location.href='/home'">Halaman Utama</button>
-			<button class="btn btn-warning btn-lg active" onclick="window.location.href='/setting'">Pengaturan</button>
+			<button class="btn btn-primary btn-lg" onclick="window.location.href='/setting'">Pengaturan</button>
 			<hr>
 			<br>
 			<br>

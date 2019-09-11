@@ -21,8 +21,8 @@
 		<h2 style="text-align: center;">OLES</h2>
 		<h3 style="text-align: center;">Cara Tepat Jual Lambat</h3>
 		<div style="text-align: right;">
-			<button class="btn btn-primary light btn-lg" onclick="window.location.href='/home'">Home</button>
-			<button class="btn btn-warning btn-lg active" onclick="window.location.href='/setting'">Setting</button>
+			<button class="btn btn-primary light btn-lg" onclick="window.location.href='/home'">Halaman Utama</button>
+			<button class="btn btn-warning btn-lg active" onclick="window.location.href='/setting'">Pengaturan</button>
 			<hr>
 			<br><br><br>
 		</div>

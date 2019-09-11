@@ -66,10 +66,10 @@ class BarangController extends Controller
       $kode= Barang::where('kode_barang', '=', $request->kode_barang)->get();
       $count = count($kode);
        if ($count == 1) {
-        return response()->json(['errors'=>'Data already exist in Database']);
+        return response()->json(['errors'=>'Kode Barang sudha terpakai']);
        }else{
         Barang::create($form_data);
-        return response()->json(['success'=>'Data added successfully']);
+        return response()->json(['success'=>'Data berhasil ditambah']);
       }
     }
 

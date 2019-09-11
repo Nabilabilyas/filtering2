@@ -58,7 +58,7 @@ class LokasiController extends Controller
     		return response()->json(['error'=>'Kode lokasi sudah terpakai']);
     	}else{
     		Lokasi::create($form_data);
-    		return response()->json(['success'=>'Data lokasi ditambah.']);
+    		return response()->json(['success'=>'Data berhasil ditambah.']);
     	}
     }
 
@@ -88,7 +88,7 @@ class LokasiController extends Controller
 
         Lokasi::where('kode_lokasi','=', $id)->update($form_data);
 
-        return response()->json(['success'=>'Data berhasil dihapus.']);
+        return response()->json(['success'=>'Data berhasil diaktifkan.']);
     }
 
       public function update(Request $request)

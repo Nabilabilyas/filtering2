@@ -6,7 +6,8 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/datatables.min.css">
 <style>
 .width {width: 280px;}
-
+ div#myTable_length{ text-align: left; }
+ div#myTable_info{ text-align: left; }
 </style>
 	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
 	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
@@ -20,7 +21,7 @@
 			<h1 style="text-align: center;">OLES</h1><hr>
 			<h1 style="text-align: center;">Cara Tepat Jual Lambat</h1>
 			<button class="btn btn-primary light btn-lg" onclick="window.location.href='/home'">Halaman Utama</button>
-			<button class="btn btn-warning btn-lg active" onclick="window.location.href='/setting'">Pengaturan</button>
+			<button class="btn btn-primary btn-lg " onclick="window.location.href='/setting'">Pengaturan</button>
 			<hr>
 			<br>
 			<br>
@@ -76,7 +77,7 @@
 		        </button>
 		      </div>
 		      <div class="modal-body">
-		        <input class="form-control input-lg" type="text" name="action" id="action"><br><br>
+		        <input class="form-control input-lg" type="hidden" name="action" id="action"><br><br>
 
 		        <table class="table">
 		        	<tr>
