@@ -55,10 +55,10 @@ class PenjualController extends Controller
     	$kode= Penjual::where('kode_penjual', '=', $request->kode_penjual)->get();
     	$count = count($kode);
     	 if ($count == 1) {
-    	 	return response()->json(['errors'=>'Data already exist in Database']);
+    	 	return response()->json(['errors'=>'Kode Penjual sudah terpakai']);
     	 }else{
     		Penjual::create($form_data);
-    		return response()->json(['success'=>'Data added successfully']);
+    		return response()->json(['success'=>'Data barhasil ditambah']);
     	}
     }
 
@@ -85,7 +85,7 @@ class PenjualController extends Controller
     		'usia_penjual' => $request->usia_penjual,
     	);
     	$kodePel= Penjual::where('kode_penjual', '=', $request->kode_penjual)->update($form_data);
-    	return response()->json(['success'=>'Data successfully updated']);
+    	return response()->json(['success'=>'Data berhasil diupdate']);
     }
 
     public function delete($kode){
@@ -96,7 +96,7 @@ class PenjualController extends Controller
             'tanggal_hapus' =>date('Y-m-d H:i:s')
     	);
     	$kodePel= Penjual::where('kode_penjual', '=', $kode)->update($form_data);
-    	return response()->json(['success'=>'Data berhasil Dihapus']);
+    	return response()->json(['success'=>'Data berhasil dihapus']);
     }
 
     public function aktif($kode){
@@ -106,6 +106,6 @@ class PenjualController extends Controller
             'tanggal_hapus'=> NULL
     	);
     	$kodePel= Penjual::where('kode_penjual', '=', $kode)->update($form_data);
-    	return response()->json(['success'=>'Data berhasil Dihapus']);
+    	return response()->json(['success'=>'Data berhasil diaktifkan']);
     }
 }

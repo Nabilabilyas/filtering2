@@ -57,10 +57,10 @@ class KategoriController extends Controller
 		$count = count($kodePel);
 
 		if ($count == 1) {
-            return response()->json(['errors'=>'Data Sudah Ada']);
+            return response()->json(['errors'=>'Data telah ada didatabse']);
 		}else{
 			Kategori::create($form_data);
-        	return response()->json(['success'=>'Data Berhasil Ditambah']);
+        	return response()->json(['success'=>'Data berhasil ditambah']);
 		}
 
     }
@@ -86,7 +86,7 @@ public function edit (Request $request,$id){
         );
         Kategori::where ('kode_kategori','=',$id)->update($Update);
 
-        return response()->json(['success'=>'Data Berhasil Diapdate']);
+        return response()->json(['success'=>'Data Berhasil dihapus']);
     }
 //Aktif
     public function aktif($id){
@@ -96,7 +96,7 @@ public function edit (Request $request,$id){
         );
         Kategori::where ('kode_kategori','=',$id)->update($Update);
 
-        return response()->json(['success'=>'Data Berhasil Diapdate']);
+        return response()->json(['success'=>'Data Berhasil diaktifkan']);
     }
 
 //Update
@@ -110,7 +110,7 @@ public function update(request $request){
         );
 
         $kodePel = Kategori::where ('kode_kategori','=',$request->kode_kategori )->update($Update);
-            return response()->json(['success'=>'Data Berhasil Diapdate']);
+            return response()->json(['success'=>'Data Berhasil diupdate']);
         }
 
 }//penutup document
